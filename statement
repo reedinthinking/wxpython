@@ -1,0 +1,5 @@
+pip install -U wxPython
+
+或者
+
+运行exe安装，路径选到 anaconda/Lib/  不要选site-packages,会自动生成这个路径
