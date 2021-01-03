@@ -222,30 +222,30 @@ class SiteLog(wx.Frame):
         startbtn.Bind(wx.EVT_BUTTON, self.runAnalysis)
         # text6 = wx.StaticText(panel, label="")
         # paramsizer.Add(text6, pos=(1, 4), flag=wx.EXPAND|wx.ALIGN_LEFT|wx.ALL,border=sizerborder)
-        sizer.Add(startbtn, pos=(8, 0), flag=wx.CENTER | wx.RIGHT | wx.ALL, border=sizerborder)
+        sizer.Add(startbtn, pos=(8, 2), flag=wx.CENTER | wx.RIGHT | wx.ALL, border=sizerborder)
 
-        # set the stop button
-        stopbmp = wx.Image("image/stop.jpg", wx.BITMAP_TYPE_ANY)  # .ConvertToBitmap()
-        w = stopbmp.GetWidth()
-        h = stopbmp.GetHeight()
-        print w
-        print h
-        stopbmp = stopbmp.Scale(w / 4, h / 4)
-        stopbmp = stopbmp.ConvertToBitmap()
-
-        stopbmp2 = wx.Image("image/stop1.jpg", wx.BITMAP_TYPE_ANY)  # .ConvertToBitmap()
-        w = stopbmp2.GetWidth()
-        h = stopbmp2.GetHeight()
-        print w
-        print h
-        stopbmp2 = stopbmp2.Scale(w / 4, h / 4)
-        stopbmp2 = stopbmp2.ConvertToBitmap()
-        stopbtn = wx.BitmapButton(panel, -1, stopbmp, size=wx.DefaultSize, style=wx.BORDER_NONE)
-        stopbtn.SetBitmapFocus(stopbmp2)
-        stopbtn.Bind(wx.EVT_BUTTON, self.stopAnalysis)
-        # text6 = wx.StaticText(panel, label="")
-        # paramsizer.Add(text6, pos=(1, 4), flag=wx.EXPAND|wx.ALIGN_LEFT|wx.ALL,border=sizerborder)
-        sizer.Add(stopbtn, pos=(8, 3), flag=wx.CENTER | wx.RIGHT | wx.ALL, border=sizerborder)
+        # # set the stop button
+        # stopbmp = wx.Image("image/stop.jpg", wx.BITMAP_TYPE_ANY)  # .ConvertToBitmap()
+        # w = stopbmp.GetWidth()
+        # h = stopbmp.GetHeight()
+        # print w
+        # print h
+        # stopbmp = stopbmp.Scale(w / 4, h / 4)
+        # stopbmp = stopbmp.ConvertToBitmap()
+        #
+        # stopbmp2 = wx.Image("image/stop1.jpg", wx.BITMAP_TYPE_ANY)  # .ConvertToBitmap()
+        # w = stopbmp2.GetWidth()
+        # h = stopbmp2.GetHeight()
+        # print w
+        # print h
+        # stopbmp2 = stopbmp2.Scale(w / 4, h / 4)
+        # stopbmp2 = stopbmp2.ConvertToBitmap()
+        # stopbtn = wx.BitmapButton(panel, -1, stopbmp, size=wx.DefaultSize, style=wx.BORDER_NONE)
+        # stopbtn.SetBitmapFocus(stopbmp2)
+        # stopbtn.Bind(wx.EVT_BUTTON, self.stopAnalysis)
+        # # text6 = wx.StaticText(panel, label="")
+        # # paramsizer.Add(text6, pos=(1, 4), flag=wx.EXPAND|wx.ALIGN_LEFT|wx.ALL,border=sizerborder)
+        # sizer.Add(stopbtn, pos=(8, 3), flag=wx.CENTER | wx.RIGHT | wx.ALL, border=sizerborder)
 
         hbox.Add(sizer, flag=wx.EXPAND | wx.LEFT | wx.RIGHT | wx.TOP, border=20)
 
