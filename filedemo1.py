@@ -12,68 +12,265 @@ import datetime
 
 
 class SiteLog(wx.Frame):
-    def __init__(self):
-        wx.Frame.__init__(self, None, title='SiteLog', size=(650, 600))
+    def __init__(self, parent, title):
+        super(SiteLog, self).__init__(parent, title=title, size=(900, 800))
 
-        # set the windows
-        startx = 5  # the positon of X
-        starty = 5  # the positon of Y
-        height = 25
-        btwidth = 80
-        textwidth = 280
-        splitwid = 5
-        splitheight = 30
-        # line 1
-        self.SelBtnStatement1 = wx.Button(self, label=u'add(ref)', pos=(startx, starty), size=(btwidth, height))  # , style = wx.BORDER_NONE
-        self.SelBtnStatement1 = wx.Button(self, label=u'add(seq-1)', pos=(startx, starty),size=(btwidth, height))
-        self.SelBtnStatement1 = wx.Button(self, label=u'add(seq-2)', pos=(startx, starty), size=(btwidth, height))
-        self.FileName = wx.TextCtrl(self, pos=(startx + btwidth + splitwid, starty), size=(textwidth, height))
-        self.SelBtn = wx.Button(self, label='>>', pos=(startx + btwidth + splitwid * 7 + textwidth, starty), size=(btwidth, height))
-        self.SelBtn.Bind(wx.EVT_BUTTON, self.OnOpenFile)
-        # self.SelBtn.Bind(wx.EVT_ENTER_WINDOW, self.B)
-        # self.SelBtn.Bind(wx.EVT_LEAVE_WINDOW, self.C)
-        self.OkBtn2 = wx.Button(self, label=u'查看', pos=(startx + btwidth * 2 + splitwid * 9 + textwidth, starty), size=(btwidth, height))
-        self.OkBtn2.Bind(wx.EVT_BUTTON, self.ReadFile)
-
-        # line 2
-        self.params = {}
-        paramwidth = 80
-        line2_y = starty + splitheight
-        btandtextwidth = btwidth + splitwid * 8 + paramwidth
-        self.SelBtnStatement2 = wx.Button(self, label=u'线程数', pos=(startx, line2_y), size=(btwidth, height))
-        self.theadnum = wx.TextCtrl(self, value="16", pos=(startx + btwidth + splitwid, line2_y), size=(paramwidth, height))
-        self.SelBtnStatement2.Bind(wx.EVT_BUTTON, self.setParams)
-        # print self.theadnum.GetValue()
-        self.SelBtnStatement22 = wx.Button(self, label=u'阈值', pos=(startx + btandtextwidth, starty + splitheight),
-                                           size=(btwidth, height))
-        self.threshold = wx.TextCtrl(self, value="0.99", pos=(startx + btandtextwidth + btwidth + splitwid, line2_y),
-                                     size=(paramwidth, height))
-        self.SelBtnStatement22.Bind(wx.EVT_BUTTON, self.setParams)
-        self.SelBtnStatement23 = wx.Button(self, label=u'Blast_ident',
-                                           pos=(startx + btandtextwidth * 2, line2_y),
-                                           size=(btwidth, height))
-        self.blast_ident = wx.TextCtrl(self, value="85", pos=(startx + btandtextwidth * 2 + btwidth + splitwid, line2_y),
-                                       size=(paramwidth, height))
-        self.SelBtnStatement23.Bind(wx.EVT_BUTTON, self.setParams)
-
-        # line 3
-        line3_y = starty + splitheight * 2
-        self.SelBtnStatement3 = wx.Button(self, label=u'输出路径', pos=(startx, line3_y), size=(btwidth, height))
-        self.FileDir = wx.TextCtrl(self, pos=(startx + btwidth + splitwid, line3_y), size=(280, 25))  # label='输出路径',
-        self.SelBtn3 = wx.Button(self, label='>>', pos=(startx + btwidth + splitwid * 7 + textwidth, line3_y), size=(btwidth, height))
-        self.SelBtn3.Bind(wx.EVT_BUTTON, self.OnOpenFileDir)
-        self.SelBtn32 = wx.Button(self, label='Start', pos=(startx + btwidth * 2 + splitwid * 9 + textwidth, line3_y), size=(btwidth, height))
-        self.SelBtn32.Bind(wx.EVT_BUTTON, self.runAnalysis)
-
-        self.FileContent = wx.TextCtrl(self, pos=(startx, starty + splitheight * 3), size=(620, 480), style=(wx.TE_MULTILINE))
+        self.InitUI()
+        self.Centre()
 
         # get the current path
+        self.params = {}
         self.abspath = self.getAbsolutePath()
         self.shell = ''  # the subprocess
         # init the log class
-        #self.logLevel = self.getConfig('config')['logLevel']
+        # self.logLevel = self.getConfig('config')['logLevel']
         self.log = self.getLogger()#Logger('log/operate.log', level=self.logLevel)
 
+    def InitUI(self):
+
+        # panel = wx.Panel(self)
+        panel = TabPanel(self, -1)
+
+        # 水平盒子
+        hbox = wx.BoxSizer(wx.HORIZONTAL)
+
+        font = wx.SystemSettings_GetFont(wx.SYS_SYSTEM_FONT)
+        font.SetPointSize(9)
+
+        fonttitle = wx.Font(16, 70, 90, 90, False, "宋体")
+
+        textfont = wx.Font(11, 74, 90, 92, False, "Microsoft Sans Serif")
+        textfont.SetPointSize(10)
+
+        ctrfont = wx.Font(11, 74, 90, 92, False, "Microsoft Sans Serif")
+        ctrfont.SetPointSize(10)
+
+        # sb1 = wx.StaticBox(panel, label="Param set")
+        sizer = wx.GridBagSizer(7, 5)
+        sizer.SetMinSize(wx.Size(500, 500))
+        sizerborder = 5
+
+        bmp = wx.Image("image/open.bmp", wx.BITMAP_TYPE_ANY)  # .ConvertToBitmap()
+        w = bmp.GetWidth()
+        h = bmp.GetHeight()
+        print w
+        print h
+        bmp = bmp.Scale(w / 3, h / 3)
+        bmp = bmp.ConvertToBitmap()
+
+        bmp2 = wx.Image("image/open1.bmp", wx.BITMAP_TYPE_BMP)  # .ConvertToBitmap()
+        w = bmp2.GetWidth()
+        h = bmp2.GetHeight()
+        print w
+        print h
+        bmp2 = bmp2.Scale(w / 3, h / 3)
+        bmp2 = bmp2.ConvertToBitmap()
+
+        text = wx.StaticText(panel, label=u"Program Config")
+        text.SetFont(fonttitle)
+        text.SetForegroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_HIGHLIGHT))
+        sizer.Add(text, pos=(0, 2), flag=wx.TOP | wx.LEFT | wx.BOTTOM,
+                  border=sizerborder)
+        # icon = wx.StaticBitmap(panel, bitmap=wx.Bitmap('image/exec.png'))
+        # sizer.Add(icon, pos=(0, 4), flag=wx.LEFT | wx.RIGHT | wx.ALIGN_RIGHT,
+        #           border=sizerborder)
+        line = wx.StaticLine(panel)
+        sizer.Add(line, pos=(1, 0), span=(1, 5),
+                  flag=wx.EXPAND | wx.BOTTOM, border=sizerborder)
+
+        text1 = wx.StaticText(panel, label=u'add(ref)')
+        text1.SetFont(textfont)
+        text1.SetBackgroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_INFOBK))
+        sizer.Add(text1, pos=(2, 0), flag=wx.LEFT | wx.ALL | wx.ALIGN_CENTER_VERTICAL, border=sizerborder)
+        self.tc1 = wx.TextCtrl(panel)
+        self.tc1.SetFont(textfont)
+        self.tc1.SetForegroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_HIGHLIGHT))
+        sizer.Add(self.tc1, pos=(2, 1), span=(1, 3), flag=wx.EXPAND | wx.ALIGN_LEFT | wx.ALL, border=sizerborder)
+        button1 = wx.BitmapButton(panel, -1, bmp, size=wx.DefaultSize, style=wx.BORDER_NONE)
+        button1.SetBitmapHover(bmp2)
+        button1.Bind(wx.EVT_BUTTON, self.OnOpenFile1)
+        sizer.Add(button1, pos=(2, 4), flag=wx.RIGHT | wx.ALL, border=sizerborder)
+
+        text2 = wx.StaticText(panel, label="add(seq-1)")
+        text2.SetBackgroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_INFOBK))
+        text2.SetFont(textfont)
+        sizer.Add(text2, pos=(3, 0), flag=wx.LEFT | wx.ALIGN_CENTER_VERTICAL, border=sizerborder)
+        self.tc2 = wx.TextCtrl(panel)
+        self.tc2.SetForegroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_HIGHLIGHT))
+        self.tc2.SetFont(textfont)
+        sizer.Add(self.tc2, pos=(3, 1), span=(1, 3), flag=wx.EXPAND | wx.ALIGN_LEFT | wx.ALL, border=sizerborder)
+        button2 = wx.BitmapButton(panel, -1, bmp, size=wx.DefaultSize, style=wx.BORDER_NONE)
+        button2.SetBitmapHover(bmp2)
+        button2.Bind(wx.EVT_BUTTON, self.OnOpenFile2)
+        sizer.Add(button2, pos=(3, 4), flag=wx.CENTER | wx.RIGHT | wx.ALL, border=sizerborder)
+
+        text3 = wx.StaticText(panel, label="add(seq-2)")
+        text3.SetBackgroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_INFOBK))
+        text3.SetFont(textfont)
+        sizer.Add(text3, pos=(4, 0), flag=wx.LEFT | wx.ALIGN_CENTER_VERTICAL, border=sizerborder)
+        self.tc3 = wx.TextCtrl(panel)
+        self.tc3.SetForegroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_HIGHLIGHT))
+        self.tc3.SetFont(textfont)
+        sizer.Add(self.tc3, pos=(4, 1), span=(1, 3), flag=wx.EXPAND | wx.ALIGN_LEFT | wx.ALL, border=sizerborder)
+        button3 = wx.BitmapButton(panel, -1, bmp, size=wx.DefaultSize, style=wx.BORDER_NONE)
+        button3.SetBitmapHover(bmp2)
+        button3.Bind(wx.EVT_BUTTON, self.OnOpenFile3)
+        sizer.Add(button3, pos=(4, 4), flag=wx.CENTER | wx.RIGHT | wx.ALL, border=sizerborder)
+
+        text4 = wx.StaticText(panel, label="output")
+        text4.SetBackgroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_INFOBK))
+        text4.SetFont(textfont)
+        sizer.Add(text4, pos=(5, 0), flag=wx.LEFT | wx.ALIGN_CENTER_VERTICAL, border=sizerborder)
+        self.tc4 = wx.TextCtrl(panel)
+        self.tc4.SetForegroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_HIGHLIGHT))
+        self.tc4.SetFont(textfont)
+        sizer.Add(self.tc4, pos=(5, 1), span=(1, 3), flag=wx.EXPAND | wx.ALIGN_LEFT | wx.ALL, border=sizerborder)
+        button4 = wx.BitmapButton(panel, -1, bmp, size=wx.DefaultSize, style=wx.BORDER_NONE)
+        button4.SetBitmapHover(bmp2)
+        button4.Bind(wx.EVT_BUTTON, self.OnOpenFileDir)
+        sizer.Add(button4, pos=(5, 4), flag=wx.CENTER | wx.RIGHT | wx.ALL, border=sizerborder)
+
+        # text5 = wx.StaticText(panel, label="")
+        # sizer.Add(text5, pos=(6, 0), span=(1, 1), flag=wx.EXPAND | wx.TOP | wx.LEFT | wx.RIGHT, border=10)
+
+        sizer.AddGrowableCol(2)
+
+        # 参数设置
+        sb = wx.StaticBox(panel, label="Param set")
+        boxsizer = wx.StaticBoxSizer(sb, wx.VERTICAL)
+        paramsizer = wx.GridBagSizer(4, 5)
+        sizer.SetMinSize(wx.Size(250, 250))
+
+        paramtext = wx.StaticText(panel, label="thread")
+        paramtext.SetBackgroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_INFOBK))
+        paramtext.SetFont(textfont)
+        paramsizer.Add(paramtext, pos=(0, 1), flag=wx.LEFT | wx.ALIGN_CENTER_VERTICAL, border=sizerborder)
+        self.theadnum = wx.TextCtrl(panel, value="16")
+        self.theadnum.SetForegroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_HIGHLIGHT))
+        self.theadnum.SetFont(textfont)
+        paramsizer.Add(self.theadnum, pos=(0, 3), flag=wx.LEFT | wx.ALIGN_CENTER_VERTICAL, border=sizerborder)
+
+        paramtext2 = wx.StaticText(panel, label="threshold")
+        paramtext2.SetBackgroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_INFOBK))
+        paramtext2.SetFont(textfont)
+        paramsizer.Add(paramtext2, pos=(1, 1), flag=wx.LEFT | wx.ALIGN_CENTER_VERTICAL, border=sizerborder)
+        self.threshold = wx.TextCtrl(panel, value="0.99")
+        self.threshold.SetForegroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_HIGHLIGHT))
+        self.threshold.SetFont(textfont)
+        paramsizer.Add(self.threshold, pos=(1, 3), flag=wx.LEFT | wx.ALIGN_CENTER_VERTICAL, border=sizerborder)
+
+        # set the update button
+        parambmp = wx.Image("image/update.bmp", wx.BITMAP_TYPE_ANY)  # .ConvertToBitmap()
+        w = parambmp.GetWidth()
+        h = parambmp.GetHeight()
+        print w
+        print h
+        parambmp = parambmp.Scale(w / 3, h / 3)
+        parambmp = parambmp.ConvertToBitmap()
+
+        parambmp2 = wx.Image("image/update1.bmp", wx.BITMAP_TYPE_BMP)  # .ConvertToBitmap()
+        w = parambmp2.GetWidth()
+        h = parambmp2.GetHeight()
+        print w
+        print h
+        parambmp2 = parambmp2.Scale(w / 3, h / 3)
+        parambmp2 = parambmp2.ConvertToBitmap()
+        updatebtn = wx.BitmapButton(panel, -1, parambmp, size=wx.DefaultSize, style=wx.BORDER_NONE)
+        updatebtn.SetBitmapHover(parambmp2)
+        updatebtn.Bind(wx.EVT_BUTTON, self.setParams)
+        # text6 = wx.StaticText(panel, label="")
+        # paramsizer.Add(text6, pos=(1, 4), flag=wx.EXPAND|wx.ALIGN_LEFT|wx.ALL,border=sizerborder)
+        paramsizer.Add(updatebtn, pos=(1, 4), flag=wx.LEFT | wx.ALL, border=sizerborder)
+
+        paramtext3 = wx.StaticText(panel, label="Blast_ident")
+        paramtext3.SetBackgroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_INFOBK))
+        paramtext3.SetFont(textfont)
+        paramsizer.Add(paramtext3, pos=(2, 1), flag=wx.LEFT | wx.ALIGN_CENTER_VERTICAL, border=sizerborder)
+        self.Blast_ident = wx.TextCtrl(panel, value="85")
+        self.Blast_ident.SetForegroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_HIGHLIGHT))
+        self.Blast_ident.SetFont(textfont)
+        paramsizer.Add(self.Blast_ident, pos=(2, 3), flag=wx.LEFT | wx.ALIGN_CENTER_VERTICAL, border=sizerborder)
+        paramsizer.AddGrowableCol(2)
+
+        boxsizer.Add(paramsizer)
+
+        sizer.Add(boxsizer, pos=(6, 0), span=(1, 5), flag=wx.EXPAND | wx.TOP | wx.LEFT | wx.RIGHT, border=10)
+
+        line2 = wx.StaticLine(panel)
+        sizer.Add(line2, pos=(7, 0), span=(1, 5),
+                  flag=wx.EXPAND | wx.BOTTOM, border=sizerborder)
+
+        # set the start button
+        startbmp = wx.Image("image/start.jpg", wx.BITMAP_TYPE_ANY)  # .ConvertToBitmap()
+        w = startbmp.GetWidth()
+        h = startbmp.GetHeight()
+        print w
+        print h
+        startbmp = startbmp.Scale(w / 4, h / 4)
+        startbmp = startbmp.ConvertToBitmap()
+
+        startbmp2 = wx.Image("image/start1.jpg", wx.BITMAP_TYPE_ANY)  # .ConvertToBitmap()
+        w = startbmp2.GetWidth()
+        h = startbmp2.GetHeight()
+        print w
+        print h
+        startbmp2 = startbmp2.Scale(w / 4, h / 4)
+        startbmp2 = startbmp2.ConvertToBitmap()
+        startbtn = wx.BitmapButton(panel, -1, startbmp, size=wx.DefaultSize, style=wx.BORDER_NONE)
+        startbtn.SetBitmapHover(startbmp2)
+        # text6 = wx.StaticText(panel, label="")
+        # paramsizer.Add(text6, pos=(1, 4), flag=wx.EXPAND|wx.ALIGN_LEFT|wx.ALL,border=sizerborder)
+        sizer.Add(startbtn, pos=(8, 0), flag=wx.LEFT | wx.ALL, border=sizerborder)
+
+        # set the stop button
+        stopbmp = wx.Image("image/stop.jpg", wx.BITMAP_TYPE_ANY)  # .ConvertToBitmap()
+        w = stopbmp.GetWidth()
+        h = stopbmp.GetHeight()
+        print w
+        print h
+        stopbmp = stopbmp.Scale(w / 4, h / 4)
+        stopbmp = stopbmp.ConvertToBitmap()
+
+        stopbmp2 = wx.Image("image/stop1.jpg", wx.BITMAP_TYPE_ANY)  # .ConvertToBitmap()
+        w = stopbmp2.GetWidth()
+        h = stopbmp2.GetHeight()
+        print w
+        print h
+        stopbmp2 = stopbmp2.Scale(w / 4, h / 4)
+        stopbmp2 = stopbmp2.ConvertToBitmap()
+        stopbtn = wx.BitmapButton(panel, -1, stopbmp, size=wx.DefaultSize, style=wx.BORDER_NONE)
+        stopbtn.SetBitmapHover(stopbmp2)
+        # text6 = wx.StaticText(panel, label="")
+        # paramsizer.Add(text6, pos=(1, 4), flag=wx.EXPAND|wx.ALIGN_LEFT|wx.ALL,border=sizerborder)
+        sizer.Add(stopbtn, pos=(8, 4), flag=wx.LEFT | wx.ALL, border=sizerborder)
+
+        hbox.Add(sizer, flag=wx.EXPAND | wx.LEFT | wx.RIGHT | wx.TOP, border=20)
+
+        hbox.Add((-1, 10))
+
+        hbox3 = wx.BoxSizer(wx.VERTICAL)
+
+        text7 = wx.StaticText(panel, label=u"Run Log")
+        text7.SetFont(fonttitle)
+        text7.SetForegroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_HIGHLIGHT))
+        hbox3.Add(text7, 0, flag=wx.CENTER | wx.ALL, border=20)
+
+        # line3 = wx.StaticLine(panel)
+        # hbox3.Add(line3, flag=wx.EXPAND | wx.BOTTOM, border=sizerborder)
+
+        self.FileContent = wx.TextCtrl(panel, style=wx.TE_MULTILINE, size=(450, 150))
+        hbox3.Add(self.FileContent, proportion=1, flag=wx.EXPAND)
+        hbox.Add(hbox3, proportion=1, flag=wx.LEFT | wx.RIGHT | wx.EXPAND,
+                 border=20)
+
+        hbox.Add((-1, 25))
+
+        panel.SetSizer(hbox)
+
+        panel.SetSizer(hbox)
+        hbox.Fit(self)
+        # panel.GetSizer().Fit(self)
+        panel.Centre(wx.BOTH)
     def getLogger(self):
         logLevel = self.getConfig('config')['logLevel']
         logfile = self.abspath + '/log/operate-'+datetime.datetime.now().strftime("%Y-%m-%d")+'.log'
@@ -87,11 +284,11 @@ class SiteLog(wx.Frame):
     def C(self, evt):
         wx.Frame.SetBackgroundColour("#EFEFEF")
 
-    def OnOpenFile(self, event):  # 文件选择
+    def OnOpenFile1(self, event):  # 文件选择
         wildcard = 'All files(*.*)|*.*'
         dialog = wx.FileDialog(None, 'select', os.getcwd(), '', wildcard, wx.FD_OPEN)
         if dialog.ShowModal() == wx.ID_OK:
-            self.FileName.SetValue(dialog.GetPath())
+            self.tc1.SetValue(dialog.GetPath())
             logstr = "选择待分析文件：" + dialog.GetPath()
             self.log.logger.info(logstr)
             dictfilepath = {'filepath': {'inputfile': dialog.GetPath()}}
@@ -111,12 +308,61 @@ class SiteLog(wx.Frame):
                 self.log.logger.error(error)
             dialog.Destroy
 
+    def OnOpenFile2(self, event):  # 文件选择
+        wildcard = 'All files(*.*)|*.*'
+        dialog = wx.FileDialog(None, 'select', os.getcwd(), '', wildcard, wx.FD_OPEN)
+        if dialog.ShowModal() == wx.ID_OK:
+            self.tc2.SetValue(dialog.GetPath())
+            logstr = "选择待分析文件：" + dialog.GetPath()
+            self.log.logger.info(logstr)
+            dictfilepath = {'filepath': {'inputfile': dialog.GetPath()}}
+            try:
+                self.updateConfig(dictfilepath)
+                logstr = "成功更新配置文件：inputfile"
+                self.log.logger.info(logstr)
+                self.FileContent.SetDefaultStyle(wx.TextAttr("GREEN"))
+                self.FileContent.AppendText(logstr)
+                self.FileContent.AppendText("\r\n")
+            except Exception as error:
+                logstr = "更新配置文件失败：inputfile"
+                self.log.logger.error(logstr)
+                self.FileContent.SetDefaultStyle(wx.TextAttr("RED"))
+                self.FileContent.AppendText(logstr)
+                self.FileContent.AppendText("\r\n")
+                self.log.logger.error(error)
+            dialog.Destroy
+
+    def OnOpenFile3(self, event):  # 文件选择
+        wildcard = 'All files(*.*)|*.*'
+        dialog = wx.FileDialog(None, 'select', os.getcwd(), '', wildcard, wx.FD_OPEN)
+        if dialog.ShowModal() == wx.ID_OK:
+            self.tc3.SetValue(dialog.GetPath())
+            logstr = "选择待分析文件：" + dialog.GetPath()
+            self.log.logger.info(logstr)
+            dictfilepath = {'filepath': {'inputfile': dialog.GetPath()}}
+            try:
+                self.updateConfig(dictfilepath)
+                logstr = "成功更新配置文件：inputfile"
+                self.log.logger.info(logstr)
+                self.FileContent.SetDefaultStyle(wx.TextAttr("GREEN"))
+                self.FileContent.AppendText(logstr)
+                self.FileContent.AppendText("\r\n")
+            except Exception as error:
+                logstr = "更新配置文件失败：inputfile"
+                self.log.logger.error(logstr)
+                self.FileContent.SetDefaultStyle(wx.TextAttr("RED"))
+                self.FileContent.AppendText(logstr)
+                self.FileContent.AppendText("\r\n")
+                self.log.logger.error(error)
+            dialog.Destroy
+
+
     def OnOpenFileDir(self, event):  # 文件夹选择
         """"""
         dialog = wx.DirDialog(self, u"选择文件夹", style=wx.DD_DEFAULT_STYLE)
         if dialog.ShowModal() == wx.ID_OK:
             print dialog.GetPath()  # 文件夹路径
-            self.FileDir.SetValue(dialog.GetPath())
+            self.tc4.SetValue(dialog.GetPath())
 
             logstr = "选择输出文件夹：" + dialog.GetPath()
             self.log.logger.info(logstr)
@@ -306,6 +552,31 @@ class SiteLog(wx.Frame):
 #
 #     def write(self,string):
 #      self.out.WriteText(string)
+class TabPanel(wx.Panel):
+    def __init__(self, parent, id):
+        wx.Panel.__init__(self, parent, id)
+        self.frame = parent
+
+        sizer = wx.BoxSizer(wx.VERTICAL)
+        hSizer = wx.BoxSizer(wx.HORIZONTAL)
+        self.SetBackgroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_WINDOW))
+        #self.Bind(wx.EVT_ERASE_BACKGROUND, self.OnEraseBackground)
+
+    def OnEraseBackground(self, evt):
+        """
+        Add a picture to the background
+        """
+        # yanked from ColourDB.py
+        dc = evt.GetDC()
+
+        if not dc:
+            dc = wx.ClientDC(self)
+            rect = self.GetUpdateRegion().GetBox()
+            dc.SetClippingRect(rect)
+        dc.Clear()
+        bmp = wx.Bitmap("big_cat.jpg")
+        dc.DrawBitmap(bmp, 0, 0)
+
 
 if __name__ == '__main__':
     app = wx.App(redirect=False)
