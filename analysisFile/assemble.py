@@ -132,8 +132,9 @@ class Assemble(object):
             self.log.logger.info(logstr)
             print logstr
 
-            cmd2 = '%s mem %s %s/%s_1.fq %s/%s_2.fq > %s.sam -t 16 %s' % (self.software_path['bwaPath'],
-                ref_seq, self.path_raw, self.seq_name, self.path_raw, self.seq_name, self.seq_name,outfile)
+            cmd2 = '%s mem %s %s %s > %s.sam -t 16 %s' % (
+            self.software_path['bwaPath'], ref_seq, self.filepath['seqfile1'], self.filepath['seqfile2'], self.seq_name,
+            outfile)
             self.check_output(cmd2)
             logstr = "*循环%d：Step2：调用bwa的比对功能bwa mem--%s" % (k + 1, cmd2)
             self.log.logger.info(logstr)

@@ -2,6 +2,7 @@
 # encoding:utf-8
 import wx
 import os
+import signal
 import sys
 import codecs
 import subprocess
@@ -34,8 +35,8 @@ class SiteLog(wx.Frame):
         # 水平盒子
         hbox = wx.BoxSizer(wx.HORIZONTAL)
 
-        font = wx.SystemSettings_GetFont(wx.SYS_SYSTEM_FONT)
-        font.SetPointSize(9)
+        # font = wx.SystemSettings_GetFont(wx.SYS_SYSTEM_FONT)
+        # font.SetPointSize(9)
 
         fonttitle = wx.Font(16, 70, 90, 90, False, "宋体")
 
@@ -46,8 +47,8 @@ class SiteLog(wx.Frame):
         ctrfont.SetPointSize(10)
 
         # sb1 = wx.StaticBox(panel, label="Param set")
-        sizer = wx.GridBagSizer(7, 5)
-        sizer.SetMinSize(wx.Size(500, 500))
+        sizer = wx.GridBagSizer(8, 5)
+        sizer.SetMinSize(wx.Size(300, 480))
         sizerborder = 5
 
         bmp = wx.Image("image/open.bmp", wx.BITMAP_TYPE_ANY)  # .ConvertToBitmap()
@@ -87,7 +88,7 @@ class SiteLog(wx.Frame):
         self.tc1.SetForegroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_HIGHLIGHT))
         sizer.Add(self.tc1, pos=(2, 1), span=(1, 3), flag=wx.EXPAND | wx.ALIGN_LEFT | wx.ALL, border=sizerborder)
         button1 = wx.BitmapButton(panel, -1, bmp, size=wx.DefaultSize, style=wx.BORDER_NONE)
-        button1.SetBitmapHover(bmp2)
+        button1.SetBitmapFocus(bmp2)
         button1.Bind(wx.EVT_BUTTON, self.OnOpenFile1)
         sizer.Add(button1, pos=(2, 4), flag=wx.RIGHT | wx.ALL, border=sizerborder)
 
@@ -100,7 +101,7 @@ class SiteLog(wx.Frame):
         self.tc2.SetFont(textfont)
         sizer.Add(self.tc2, pos=(3, 1), span=(1, 3), flag=wx.EXPAND | wx.ALIGN_LEFT | wx.ALL, border=sizerborder)
         button2 = wx.BitmapButton(panel, -1, bmp, size=wx.DefaultSize, style=wx.BORDER_NONE)
-        button2.SetBitmapHover(bmp2)
+        button2.SetBitmapFocus(bmp2)
         button2.Bind(wx.EVT_BUTTON, self.OnOpenFile2)
         sizer.Add(button2, pos=(3, 4), flag=wx.CENTER | wx.RIGHT | wx.ALL, border=sizerborder)
 
@@ -113,7 +114,7 @@ class SiteLog(wx.Frame):
         self.tc3.SetFont(textfont)
         sizer.Add(self.tc3, pos=(4, 1), span=(1, 3), flag=wx.EXPAND | wx.ALIGN_LEFT | wx.ALL, border=sizerborder)
         button3 = wx.BitmapButton(panel, -1, bmp, size=wx.DefaultSize, style=wx.BORDER_NONE)
-        button3.SetBitmapHover(bmp2)
+        button3.SetBitmapFocus(bmp2)
         button3.Bind(wx.EVT_BUTTON, self.OnOpenFile3)
         sizer.Add(button3, pos=(4, 4), flag=wx.CENTER | wx.RIGHT | wx.ALL, border=sizerborder)
 
@@ -126,7 +127,7 @@ class SiteLog(wx.Frame):
         self.tc4.SetFont(textfont)
         sizer.Add(self.tc4, pos=(5, 1), span=(1, 3), flag=wx.EXPAND | wx.ALIGN_LEFT | wx.ALL, border=sizerborder)
         button4 = wx.BitmapButton(panel, -1, bmp, size=wx.DefaultSize, style=wx.BORDER_NONE)
-        button4.SetBitmapHover(bmp2)
+        button4.SetBitmapFocus(bmp2)
         button4.Bind(wx.EVT_BUTTON, self.OnOpenFileDir)
         sizer.Add(button4, pos=(5, 4), flag=wx.CENTER | wx.RIGHT | wx.ALL, border=sizerborder)
 
@@ -138,8 +139,8 @@ class SiteLog(wx.Frame):
         # 参数设置
         sb = wx.StaticBox(panel, label="Param set")
         boxsizer = wx.StaticBoxSizer(sb, wx.VERTICAL)
-        paramsizer = wx.GridBagSizer(4, 5)
-        sizer.SetMinSize(wx.Size(250, 250))
+        paramsizer = wx.GridBagSizer(5, 5)
+        sizer.SetMinSize(wx.Size(200, 200))
 
         paramtext = wx.StaticText(panel, label="thread")
         paramtext.SetBackgroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_INFOBK))
@@ -176,7 +177,7 @@ class SiteLog(wx.Frame):
         parambmp2 = parambmp2.Scale(w / 3, h / 3)
         parambmp2 = parambmp2.ConvertToBitmap()
         updatebtn = wx.BitmapButton(panel, -1, parambmp, size=wx.DefaultSize, style=wx.BORDER_NONE)
-        updatebtn.SetBitmapHover(parambmp2)
+        updatebtn.SetBitmapFocus(parambmp2)
         updatebtn.Bind(wx.EVT_BUTTON, self.setParams)
         # text6 = wx.StaticText(panel, label="")
         # paramsizer.Add(text6, pos=(1, 4), flag=wx.EXPAND|wx.ALIGN_LEFT|wx.ALL,border=sizerborder)
@@ -217,10 +218,11 @@ class SiteLog(wx.Frame):
         startbmp2 = startbmp2.Scale(w / 4, h / 4)
         startbmp2 = startbmp2.ConvertToBitmap()
         startbtn = wx.BitmapButton(panel, -1, startbmp, size=wx.DefaultSize, style=wx.BORDER_NONE)
-        startbtn.SetBitmapHover(startbmp2)
+        startbtn.SetBitmapFocus(startbmp2)
+        startbtn.Bind(wx.EVT_BUTTON, self.runAnalysis)
         # text6 = wx.StaticText(panel, label="")
         # paramsizer.Add(text6, pos=(1, 4), flag=wx.EXPAND|wx.ALIGN_LEFT|wx.ALL,border=sizerborder)
-        sizer.Add(startbtn, pos=(8, 0), flag=wx.LEFT | wx.ALL, border=sizerborder)
+        sizer.Add(startbtn, pos=(8, 0), flag=wx.CENTER | wx.RIGHT | wx.ALL, border=sizerborder)
 
         # set the stop button
         stopbmp = wx.Image("image/stop.jpg", wx.BITMAP_TYPE_ANY)  # .ConvertToBitmap()
@@ -239,10 +241,11 @@ class SiteLog(wx.Frame):
         stopbmp2 = stopbmp2.Scale(w / 4, h / 4)
         stopbmp2 = stopbmp2.ConvertToBitmap()
         stopbtn = wx.BitmapButton(panel, -1, stopbmp, size=wx.DefaultSize, style=wx.BORDER_NONE)
-        stopbtn.SetBitmapHover(stopbmp2)
+        stopbtn.SetBitmapFocus(stopbmp2)
+        stopbtn.Bind(wx.EVT_BUTTON, self.stopAnalysis)
         # text6 = wx.StaticText(panel, label="")
         # paramsizer.Add(text6, pos=(1, 4), flag=wx.EXPAND|wx.ALIGN_LEFT|wx.ALL,border=sizerborder)
-        sizer.Add(stopbtn, pos=(8, 4), flag=wx.LEFT | wx.ALL, border=sizerborder)
+        sizer.Add(stopbtn, pos=(8, 3), flag=wx.CENTER | wx.RIGHT | wx.ALL, border=sizerborder)
 
         hbox.Add(sizer, flag=wx.EXPAND | wx.LEFT | wx.RIGHT | wx.TOP, border=20)
 
@@ -315,16 +318,16 @@ class SiteLog(wx.Frame):
             self.tc2.SetValue(dialog.GetPath())
             logstr = "选择待分析文件：" + dialog.GetPath()
             self.log.logger.info(logstr)
-            dictfilepath = {'filepath': {'inputfile': dialog.GetPath()}}
+            dictfilepath = {'filepath': {'seqfile1': dialog.GetPath()}}
             try:
                 self.updateConfig(dictfilepath)
-                logstr = "成功更新配置文件：inputfile"
+                logstr = "成功更新配置文件：seqfile1"
                 self.log.logger.info(logstr)
                 self.FileContent.SetDefaultStyle(wx.TextAttr("GREEN"))
                 self.FileContent.AppendText(logstr)
                 self.FileContent.AppendText("\r\n")
             except Exception as error:
-                logstr = "更新配置文件失败：inputfile"
+                logstr = "更新配置文件失败：seqfile1"
                 self.log.logger.error(logstr)
                 self.FileContent.SetDefaultStyle(wx.TextAttr("RED"))
                 self.FileContent.AppendText(logstr)
@@ -339,16 +342,16 @@ class SiteLog(wx.Frame):
             self.tc3.SetValue(dialog.GetPath())
             logstr = "选择待分析文件：" + dialog.GetPath()
             self.log.logger.info(logstr)
-            dictfilepath = {'filepath': {'inputfile': dialog.GetPath()}}
+            dictfilepath = {'filepath': {'seqfile2': dialog.GetPath()}}
             try:
                 self.updateConfig(dictfilepath)
-                logstr = "成功更新配置文件：inputfile"
+                logstr = "成功更新配置文件：seqfile2"
                 self.log.logger.info(logstr)
                 self.FileContent.SetDefaultStyle(wx.TextAttr("GREEN"))
                 self.FileContent.AppendText(logstr)
                 self.FileContent.AppendText("\r\n")
             except Exception as error:
-                logstr = "更新配置文件失败：inputfile"
+                logstr = "更新配置文件失败：seqfile2"
                 self.log.logger.error(logstr)
                 self.FileContent.SetDefaultStyle(wx.TextAttr("RED"))
                 self.FileContent.AppendText(logstr)
@@ -469,7 +472,7 @@ class SiteLog(wx.Frame):
         return output
         # p = subprocess.check_output('ifconfig')
 
-    def runAnalysis(self, event):
+    def runAnalysisbak(self, event):
         # redir = RedirectText(self.FileContent)
         btnLabel = self.SelBtn32.GetLabel()
         print btnLabel
@@ -545,6 +548,86 @@ class SiteLog(wx.Frame):
             self.shell.kill()
             self.SelBtn32.SetLabel("Start")
 
+    def runAnalysis(self, event):
+        # redir = RedirectText(self.FileContent)
+
+        # #设置文本框不同行信息的字体格式
+        # if 'OSError' in nexterrline:
+        #     self.FileContent.SetDefaultStyle(wx.TextAttr("RED"))
+        # elif 'mkdir' in nexterrline:
+        #     self.FileContent.SetDefaultStyle(wx.TextAttr("BLUE"))
+        # else:
+        #     self.FileContent.SetDefaultStyle(wx.TextAttr("BLACK"))
+        # self.FileContent.AppendText(nexterrline)
+
+        os_str = '/home/ubuntu/anaconda2/bin/python ' + self.abspath + '/analysisFile/assemble.py'  # D:\\anaconda\\
+        logstr = "调用程序指令：" + os_str
+        self.log.logger.debug(logstr)
+
+        # os_str = "ipconfig"
+        # self.check = subprocess.check_call(os_str)
+        # print self.check
+        self.shell = subprocess.Popen(os_str, bufsize=0, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True,
+                                      universal_newlines=True)
+        self.FileContent.Clear()
+
+        logstr = "开始运行分析程序……"
+        self.FileContent.SetDefaultStyle(wx.TextAttr("GREEN"))
+        self.FileContent.AppendText(logstr)
+        self.FileContent.AppendText("\r\n")
+
+        regex1 = "\^*"  # 输出匹配，只在界面显示**开头的关键信息
+        regex2 = "\^*程序"  # 输出匹配，只在界面显示**开头的关键信息
+        while True:
+            nextline = self.shell.stdout.readline()
+            if nextline == "" and self.shell.poll() != None:
+                break
+            # print(nextline.strip())
+            # self.FileContent.Clear()
+            if re.search(regex1, nextline):
+                if re.search(regex2, nextline):
+                    self.FileContent.SetDefaultStyle(wx.TextAttr("GREEN"))
+                else:
+                    self.FileContent.SetDefaultStyle(wx.TextAttr("BLACK"))
+                self.FileContent.AppendText(nextline)
+                wx.Yield()
+                logstr = "正在分析……：" + nextline
+                self.log.logger.info(logstr)
+            else:
+                logstr = "正在分析……：" + nextline
+                self.log.logger.debug(logstr)
+
+                # print outstr
+                # self.FileContent.SetValue(outstr)
+        nexterrline = self.shell.stderr.readline()
+        logstr = "程序出错……：" + nexterrline
+        self.log.logger.error(logstr)
+        if nexterrline != "":
+            self.FileContent.SetDefaultStyle(wx.TextAttr("RED"))
+            self.FileContent.AppendText(nexterrline)
+        while True:
+            nexterrline = self.shell.stderr.readline()
+            # print(nexterrline.strip())
+            # self.FileContent.Clear()
+            self.FileContent.AppendText(nexterrline)
+            wx.Yield()
+            logstr = "程序出错……：" + nexterrline
+            self.log.logger.error(logstr)
+            if nexterrline == "" and self.shell.poll() != None:
+                break
+                # print outstr
+
+    def stopAnalysis(self, event):
+        if self.shell is not None and self.shell != {} and self.shell != '':
+            print "--------------"
+            print type(self.shell)
+            # self.shell.terminate()
+            # self.shell.kill()
+            # self.shell.wait()
+            os.killpg(os.getpgid(self.shell.pid), signal.SIGUSR1)
+            self.FileContent.SetDefaultStyle(wx.TextAttr("RED"))
+            self.FileContent.AppendText("the analysis is stoped!")
+            self.log.logger.error("the analysis is stoped!")
 
 # class RedirectText(object):
 #     def __init__(self,aWxTextCtrl):
@@ -580,7 +663,7 @@ class TabPanel(wx.Panel):
 
 if __name__ == '__main__':
     app = wx.App(redirect=False)
-    SiteFrame = SiteLog()
+    SiteFrame = SiteLog(None, title="Analysis")
     # my_panel = MyPanel(SiteFrame, -1)
     SiteFrame.Show()
 
