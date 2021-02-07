@@ -8,6 +8,9 @@ from log import Logger
 import datetime
 import subprocess
 import time
+import matplotlib.pyplot as plt
+import numpy as np
+from matplotlib.pyplot import MultipleLocator
 
 
 class Assemble(object):
@@ -55,6 +58,56 @@ class Assemble(object):
         for item in list:
             dict[item[0]] = item[1]
         return dict
+
+    def drawPicture(self,datafile, savefile):
+        logstr = "start to draw the picture--the data file：%s;the output picture file:%s" % (datafile,savefile)
+        self.log.logger.info(logstr)
+        print logstr
+        rs = os.path.exists(datafile)
+        x = []
+        y = []
+
+        if rs == True:
+            print 1
+            file_handler = open(datafile, mode='r')
+            contents = file_handler.readlines()
+            for msg in contents:
+
+                msg = msg.strip(' ')
+                msg = msg.strip('\n')
+                print msg
+                list_1 = msg.split('\t')
+                if len(list_1) == 3:
+                    x.append(list_1[1])
+                    y.append(list_1[2])
+        else:
+            logstr = "the data file：%s is not found" % (datafile)
+            self.log.logger.info(logstr)
+            print logstr
+        plt.plot(x, y, linewidth=2)
+
+        plt.xlabel('Numbers', fontsize=9)
+        plt.ylabel('Squares', fontsize=9)
+        x_major_locator = MultipleLocator(50)
+        # 把x轴的刻度间隔设置为1，并存在变量里
+        y_major_locator = MultipleLocator(100)
+        # 把y轴的刻度间隔设置为10，并存在变量里
+
+        ax = plt.gca()
+        # ax为两条坐标轴的实例
+        ax.xaxis.set_major_locator(x_major_locator)
+        # 把x轴的主刻度设置为1的倍数
+        ax.yaxis.set_major_locator(y_major_locator)
+
+        plt.xlim(-1, 200)
+        # 把x轴的刻度范围设置为-0.5到11，因为0.5不满一个刻度间隔，所以数字不会显示出来，但是能看到一点空白
+        plt.ylim(-1, 500)
+        # 把y轴的刻度范围设置为-5到110，同理，-5不会标出来，但是能看到一点空白
+
+        # 保存图片到本地
+        plt.savefig(savefile)
+        # 显示图片
+        #plt.show()
 
     def check_output(self,popenargs):  # 检查执行命令是否出错
         # s = subprocess.Popen(popenargs, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
@@ -109,6 +162,7 @@ class Assemble(object):
             try:
                 os.mkdir(r'%s/tmp%d' % (self.outputpath, k + 1))
                 os.chdir(r'%s/tmp%d' % (self.outputpath, k + 1))
+                current_path = r'%s/tmp%d' % (self.outputpath, k + 1)
                 logstr = "*循环%d：迭代开始--10.1：建立文件夹tmp_k：%s/tmp%d"  % ( k+1,self.outputpath,k+1)
                 self.log.logger.info(logstr)
                 print logstr
@@ -182,6 +236,18 @@ class Assemble(object):
             logstr = "*循环%d：Step9：使用个人编写的python脚本对Step8的比对结果进行解析，计算同源性S0--%s" % (k + 1, cmd9)
             self.log.logger.info(logstr)
             print logstr
+
+            cmd10 = 'samtools depth -a %s.mapped.sorted.bam > depth.txt' % self.seq_name
+            self.check_output(cmd10)
+            logstr = "*循环%d：Step10(new add)：每个tmp文件夹中会生成一个depth.txt文档，该文档的第二列作为横坐标，第三列作为纵坐标--%s" % (k + 1, cmd10)
+            self.log.logger.info(logstr)
+            print logstr
+
+            #draw the picture of the output data
+            datafile = current_path + '/depth.txt'
+            savefile = current_path + '/output.png'
+            self.drawPicture(datafile,savefile)
+
 
             logstr = "*循环%d：Step10：调用Scout计算阈值cutoff值Sn" % (k + 1)
             self.log.logger.info(logstr)

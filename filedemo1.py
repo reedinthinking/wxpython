@@ -661,12 +661,131 @@ class TabPanel(wx.Panel):
         dc.DrawBitmap(bmp, 0, 0)
 
 
-if __name__ == '__main__':
-    app = wx.App(redirect=False)
-    SiteFrame = SiteLog(None, title="Analysis")
-    # my_panel = MyPanel(SiteFrame, -1)
-    SiteFrame.Show()
+# if __name__ == '__main__':
+#     app = wx.App(redirect=False)
+#     SiteFrame = SiteLog(None, title="Analysis")
+#     # my_panel = MyPanel(SiteFrame, -1)
+#     SiteFrame.Show()
+#
+#     # frame = wx.Frame(None, -1, '登陆窗口', size=(300, 200))
+#     # my_panel = MyPanel(frame, -1)
+#     app.MainLoop()
 
-    # frame = wx.Frame(None, -1, '登陆窗口', size=(300, 200))
-    # my_panel = MyPanel(frame, -1)
+########################################################################
+class MainPanel(wx.Panel):
+    """"""
+
+    # ----------------------------------------------------------------------
+    def __init__(self, parent):
+        """Constructor"""
+        wx.Panel.__init__(self, parent=parent, style=wx.ALIGN_CENTER_HORIZONTAL)
+        self.frame = parent
+        #self.SetBackgroundColour('white')
+        self.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNFACE ) )
+
+        #设置字体1
+        font1 = wx.Font( 9, 72, 90, 90, False, "Times New Roman" )
+        font1.SetPointSize(12)
+
+        # 设置字体-button
+        btnfont = wx.Font( 11, 74, 90, 90, False, "Trebuchet MS" )
+        btnfont.SetPointSize(9)
+        color = wx.Colour( 0, 131, 238 )
+
+        #设置布局器
+        #sizer = wx.GridBagSizer(5, 5)
+        sizer = wx.BoxSizer(wx.VERTICAL)
+        #sizer.SetMinSize(wx.Size(300, 480))
+        sizerborder = 10
+
+        text = wx.StaticText(self, label=u"Metagenomic Pathogen Identification Pipeline（MPIP）")
+        text.SetFont(font1)
+        text.SetForegroundColour(color)
+        #sizer.Add(text, pos=(0, 2), span=(1, 2),flag=wx.ALL | wx.CENTER ,border=sizerborder)
+        sizer.Add(text, 0, wx.CENTER| wx.TOP, sizerborder*5)
+
+        line = wx.StaticLine(self)
+        #sizer.Add(line, pos=(1, 0), span=(1, 5),flag=wx.EXPAND | wx.BOTTOM, border=sizerborder)
+        sizer.Add(line, 0, wx.BOTTOM |wx.TOP | wx.EXPAND, sizerborder*2)
+
+        self.btn1 = wx.Button(self, -1, label='Classification',size=(220, 30),style=wx.RAISED_BORDER|wx.BORDER_NONE)
+        self.btn1.SetFont(btnfont)
+        self.btn1.SetForegroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_BTNTEXT))
+        self.btn1.SetBackgroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_INFOBK))
+        # self.btn1.Bind(wx.EVT_ENTER_WINDOW, self.hover)
+        # self.btn1.Bind(wx.EVT_LEAVE_WINDOW, self.leave)
+        #sizer.Add(btn1, pos=(2, 2), span=(1, 2), flag=wx.TOP | wx.LEFT | wx.BOTTOM,border=sizerborder)
+        sizer.Add(self.btn1, 0, wx.ALL | wx.CENTER, sizerborder)
+
+        self.btn2 = wx.Button(self, -1, label='Pathogen characterization', size=(220, 30), style=wx.RAISED_BORDER | wx.BORDER_NONE)
+        self.btn2.SetFont(btnfont)
+        self.btn2.SetForegroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_BTNTEXT))
+        self.btn2.SetBackgroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_INFOBK))
+        # self.btn2.Bind(wx.EVT_ENTER_WINDOW, self.hover)
+        # self.btn2.Bind(wx.EVT_LEAVE_WINDOW, self.leave)
+        # sizer.Add(btn1, pos=(2, 2), span=(1, 2), flag=wx.TOP | wx.LEFT | wx.BOTTOM,border=sizerborder)
+        sizer.Add(self.btn2, 0, wx.ALL | wx.CENTER, sizerborder)
+
+        self.btn3 = wx.Button(self, -1, label='Misclassification Correction', size=(220, 30), style=wx.RAISED_BORDER | wx.BORDER_NONE)
+        self.btn3.SetFont(btnfont)
+        self.btn3.SetForegroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_BTNTEXT))
+        self.btn3.SetBackgroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_INFOBK))
+        # self.btn3.Bind(wx.EVT_ENTER_WINDOW, self.hover)
+        # self.btn3.Bind(wx.EVT_LEAVE_WINDOW, self.leave)
+        # sizer.Add(btn1, pos=(2, 2), span=(1, 2), flag=wx.TOP | wx.LEFT | wx.BOTTOM,border=sizerborder)
+        sizer.Add(self.btn3, 0, wx.ALL | wx.CENTER, sizerborder)
+
+        self.btn4 = wx.Button(self, -1, label='Iterative assembly', size=(220, 30), style=wx.RAISED_BORDER | wx.BORDER_NONE)
+        self.btn4.SetFont(btnfont)
+        self.btn4.SetForegroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_BTNTEXT))
+        self.btn4.SetBackgroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_INFOBK))
+        self.btn4.Bind(wx.EVT_ENTER_WINDOW, self.hover)
+        self.btn4.Bind(wx.EVT_LEAVE_WINDOW, self.leave)
+        self.btn4.Bind(wx.EVT_BUTTON, self.hideFrame)
+        # sizer.Add(btn1, pos=(2, 2), span=(1, 2), flag=wx.TOP | wx.LEFT | wx.BOTTOM,border=sizerborder)
+        sizer.Add(self.btn4, 0, wx.ALL | wx.CENTER, sizerborder)
+
+
+        self.SetSizer(sizer, wx.ALIGN_CENTER|wx.ALIGN_CENTER_VERTICAL)
+        sizer.Fit(self)
+        self.Centre()
+
+    # ----------------------------------------------------------------------
+    def hideFrame(self, event):
+        """"""
+        self.frame.Hide()
+        new_frame = SiteLog(None, title="Analysis")
+        new_frame.Show()
+
+    # ----------------------------------------------------------------------
+    def showFrame(self, msg):
+        """
+        Shows the frame and shows the message sent in the
+        text control
+        """
+        self.pubsubText.SetValue(msg.data)
+        frame = self.GetParent()
+        frame.Show()
+
+    def hover(self,evt):
+        self.btn4.SetForegroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_HIGHLIGHT))
+        print evt
+
+    def leave(self, evt):
+        self.btn4.SetForegroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_BTNTEXT))
+
+########################################################################
+class MainFrame(wx.Frame):
+    # ----------------------------------------------------------------------
+    def __init__(self):
+        wx.Frame.__init__(self, None, wx.ID_ANY, "Analysis",size=(500,400))
+        self.Centre()
+        panel = MainPanel(self)
+
+
+# ----------------------------------------------------------------------
+if __name__ == "__main__":
+    app = wx.App(False)
+    frame = MainFrame()
+    frame.Show()
     app.MainLoop()
