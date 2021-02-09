@@ -15,7 +15,7 @@ import datetime
 class SiteLog(wx.Frame):
     def __init__(self, parent, title):
         super(SiteLog, self).__init__(parent, title=title, size=(900, 800))
-
+        #self.Bind(wx.EVT_CLOSE, self.showWindow)
         self.InitUI()
         self.Centre()
 
@@ -26,6 +26,11 @@ class SiteLog(wx.Frame):
         # init the log class
         # self.logLevel = self.getConfig('config')['logLevel']
         self.log = self.getLogger()#Logger('log/operate.log', level=self.logLevel)
+
+    # def showWindow(self,evt):
+    #     frame = self.GetParent()
+    #     print frame
+    #     frame.show()
 
     def InitUI(self):
 
@@ -710,8 +715,8 @@ class MainPanel(wx.Panel):
 
         self.btn1 = wx.Button(self, -1, label='Classification',size=(220, 30),style=wx.RAISED_BORDER|wx.BORDER_NONE)
         self.btn1.SetFont(btnfont)
-        self.btn1.SetForegroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_BTNTEXT))
-        self.btn1.SetBackgroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_INFOBK))
+        #self.btn1.SetForegroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_BTNTEXT))
+        #self.btn1.SetBackgroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_INFOBK))
         # self.btn1.Bind(wx.EVT_ENTER_WINDOW, self.hover)
         # self.btn1.Bind(wx.EVT_LEAVE_WINDOW, self.leave)
         #sizer.Add(btn1, pos=(2, 2), span=(1, 2), flag=wx.TOP | wx.LEFT | wx.BOTTOM,border=sizerborder)
@@ -719,8 +724,8 @@ class MainPanel(wx.Panel):
 
         self.btn2 = wx.Button(self, -1, label='Pathogen characterization', size=(220, 30), style=wx.RAISED_BORDER | wx.BORDER_NONE)
         self.btn2.SetFont(btnfont)
-        self.btn2.SetForegroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_BTNTEXT))
-        self.btn2.SetBackgroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_INFOBK))
+        #self.btn2.SetForegroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_BTNTEXT))
+        #self.btn2.SetBackgroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_INFOBK))
         # self.btn2.Bind(wx.EVT_ENTER_WINDOW, self.hover)
         # self.btn2.Bind(wx.EVT_LEAVE_WINDOW, self.leave)
         # sizer.Add(btn1, pos=(2, 2), span=(1, 2), flag=wx.TOP | wx.LEFT | wx.BOTTOM,border=sizerborder)
@@ -728,8 +733,8 @@ class MainPanel(wx.Panel):
 
         self.btn3 = wx.Button(self, -1, label='Misclassification Correction', size=(220, 30), style=wx.RAISED_BORDER | wx.BORDER_NONE)
         self.btn3.SetFont(btnfont)
-        self.btn3.SetForegroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_BTNTEXT))
-        self.btn3.SetBackgroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_INFOBK))
+        #self.btn3.SetForegroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_BTNTEXT))
+        #self.btn3.SetBackgroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_INFOBK))
         # self.btn3.Bind(wx.EVT_ENTER_WINDOW, self.hover)
         # self.btn3.Bind(wx.EVT_LEAVE_WINDOW, self.leave)
         # sizer.Add(btn1, pos=(2, 2), span=(1, 2), flag=wx.TOP | wx.LEFT | wx.BOTTOM,border=sizerborder)
@@ -737,11 +742,12 @@ class MainPanel(wx.Panel):
 
         self.btn4 = wx.Button(self, -1, label='Iterative assembly', size=(220, 30), style=wx.RAISED_BORDER | wx.BORDER_NONE)
         self.btn4.SetFont(btnfont)
-        self.btn4.SetForegroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_BTNTEXT))
-        self.btn4.SetBackgroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_INFOBK))
-        self.btn4.Bind(wx.EVT_ENTER_WINDOW, self.hover)
-        self.btn4.Bind(wx.EVT_LEAVE_WINDOW, self.leave)
+        #self.btn4.SetForegroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_BTNTEXT))
+        #self.btn4.SetBackgroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_INFOBK))
+
         self.btn4.Bind(wx.EVT_BUTTON, self.hideFrame)
+        #self.btn4.Bind(wx.EVT_ENTER_WINDOW, self.hover)
+        #self.btn4.Bind(wx.EVT_LEAVE_WINDOW, self.leave)
         # sizer.Add(btn1, pos=(2, 2), span=(1, 2), flag=wx.TOP | wx.LEFT | wx.BOTTOM,border=sizerborder)
         sizer.Add(self.btn4, 0, wx.ALL | wx.CENTER, sizerborder)
 
@@ -753,7 +759,8 @@ class MainPanel(wx.Panel):
     # ----------------------------------------------------------------------
     def hideFrame(self, event):
         """"""
-        self.frame.Hide()
+        print '1111'
+        self.frame.Close()
         new_frame = SiteLog(None, title="Analysis")
         new_frame.Show()
 
@@ -763,16 +770,19 @@ class MainPanel(wx.Panel):
         Shows the frame and shows the message sent in the
         text control
         """
-        self.pubsubText.SetValue(msg.data)
+        #self.pubsubText.SetValue(msg.data)
         frame = self.GetParent()
         frame.Show()
 
     def hover(self,evt):
         self.btn4.SetForegroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_HIGHLIGHT))
+        self.btn4.Refresh()
+
         print evt
 
     def leave(self, evt):
         self.btn4.SetForegroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_BTNTEXT))
+        self.btn4.Refresh()
 
 ########################################################################
 class MainFrame(wx.Frame):

@@ -66,20 +66,21 @@ class Assemble(object):
         rs = os.path.exists(datafile)
         x = []
         y = []
-
+        i=0
         if rs == True:
             print 1
             file_handler = open(datafile, mode='r')
             contents = file_handler.readlines()
             for msg in contents:
-
+                i += 1
                 msg = msg.strip(' ')
                 msg = msg.strip('\n')
-                print msg
+                #print msg
                 list_1 = msg.split('\t')
-                if len(list_1) == 3:
-                    x.append(list_1[1])
-                    y.append(list_1[2])
+                if i<=101:
+                    if len(list_1) == 3:
+                        x.append(list_1[1])
+                        y.append(list_1[2])
         else:
             logstr = "the data file：%s is not found" % (datafile)
             self.log.logger.info(logstr)
