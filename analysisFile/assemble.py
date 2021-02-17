@@ -87,28 +87,38 @@ class Assemble(object):
             print logstr
         plt.plot(x, y, linewidth=2)
 
-        plt.xlabel('Numbers', fontsize=9)
-        plt.ylabel('Squares', fontsize=9)
-        x_major_locator = MultipleLocator(50)
-        # 把x轴的刻度间隔设置为1，并存在变量里
-        y_major_locator = MultipleLocator(100)
-        # 把y轴的刻度间隔设置为10，并存在变量里
+        plt.xlabel('x', fontsize=9)
+        plt.ylabel('y', fontsize=9)
 
-        ax = plt.gca()
-        # ax为两条坐标轴的实例
-        ax.xaxis.set_major_locator(x_major_locator)
-        # 把x轴的主刻度设置为1的倍数
-        ax.yaxis.set_major_locator(y_major_locator)
+        # x_major_locator = MultipleLocator(50)
+        # # 把x轴的刻度间隔设置为1，并存在变量里
+        # y_major_locator = MultipleLocator(100)
+        # # 把y轴的刻度间隔设置为10，并存在变量里
+        # ax = plt.gca()
+        # # ax为两条坐标轴的实例
+        # ax.xaxis.set_major_locator(x_major_locator)
+        # # 把x轴的主刻度设置为1的倍数
+        # ax.yaxis.set_major_locator(y_major_locator)
+        #
+        # plt.xlim(-1, 200)
+        # # 把x轴的刻度范围设置为-0.5到11，因为0.5不满一个刻度间隔，所以数字不会显示出来，但是能看到一点空白
+        # plt.ylim(-1, 500)
+        # # 把y轴的刻度范围设置为-5到110，同理，-5不会标出来，但是能看到一点空白
 
-        plt.xlim(-1, 200)
-        # 把x轴的刻度范围设置为-0.5到11，因为0.5不满一个刻度间隔，所以数字不会显示出来，但是能看到一点空白
-        plt.ylim(-1, 500)
-        # 把y轴的刻度范围设置为-5到110，同理，-5不会标出来，但是能看到一点空白
+        # 设置x范围
+        plt.xlim((-1, 200))
+        # 设置 x 刻度
+        x_ticks = np.arange(-1, 200, 50)
+        plt.xticks(x_ticks)
+        plt.ylim((-1, 500))
+        y_ticks = np.arange(-1, 500, 100)
+        plt.yticks(y_ticks)
 
         # 保存图片到本地
         plt.savefig(savefile)
         # 显示图片
         #plt.show()
+        plt.close('all')
 
     def check_output(self,popenargs):  # 检查执行命令是否出错
         # s = subprocess.Popen(popenargs, stdout=subprocess.PIPE, stderr=subprocess.PIPE,

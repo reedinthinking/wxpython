@@ -44,6 +44,9 @@ class SiteLog(wx.Frame):
         # font.SetPointSize(9)
 
         fonttitle = wx.Font(16, 70, 90, 90, False, "宋体")
+        fonttitle.SetPointSize(14)
+        fonttitle2 = wx.Font(16, 70, 90, 90, False, "宋体")
+        fonttitle2.SetPointSize(10)
 
         textfont = wx.Font(11, 74, 90, 92, False, "Microsoft Sans Serif")
         textfont.SetPointSize(10)
@@ -72,7 +75,7 @@ class SiteLog(wx.Frame):
         bmp2 = bmp2.Scale(w / 3, h / 3)
         bmp2 = bmp2.ConvertToBitmap()
 
-        text = wx.StaticText(panel, label=u"Program Config")
+        text = wx.StaticText(panel, label=u"Iterative assembly")
         text.SetFont(fonttitle)
         text.SetForegroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_HIGHLIGHT))
         sizer.Add(text, pos=(0, 2), flag=wx.TOP | wx.LEFT | wx.BOTTOM,
@@ -259,7 +262,7 @@ class SiteLog(wx.Frame):
         hbox3 = wx.BoxSizer(wx.VERTICAL)
 
         text7 = wx.StaticText(panel, label=u"Run Log")
-        text7.SetFont(fonttitle)
+        text7.SetFont(fonttitle2)
         text7.SetForegroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_HIGHLIGHT))
         hbox3.Add(text7, 0, flag=wx.CENTER | wx.ALL, border=20)
 
