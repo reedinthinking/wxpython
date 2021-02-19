@@ -1,11 +1,16 @@
 #!/usr/bin/env python
 #encoding:utf-8
 import re
+import sys
+sys.path.append("..")
+
 import os
 from updateConfig.configOpt import ConfigUtil
 from log import Logger
 import datetime
 import time
+reload(sys)
+sys.setdefaultencoding('utf8')
 
 class Scount(object):
     def __init__(self):

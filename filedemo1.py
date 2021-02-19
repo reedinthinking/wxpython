@@ -693,11 +693,11 @@ class MainPanel(wx.Panel):
 
         #设置字体1
         font1 = wx.Font( 9, 72, 90, 90, False, "Times New Roman" )
-        font1.SetPointSize(12)
+        font1.SetPointSize(16)
 
         # 设置字体-button
         btnfont = wx.Font( 11, 74, 90, 90, False, "Trebuchet MS" )
-        btnfont.SetPointSize(9)
+        btnfont.SetPointSize(13)
         color = wx.Colour( 0, 131, 238 )
 
         #设置布局器
@@ -718,8 +718,8 @@ class MainPanel(wx.Panel):
 
         self.btn1 = wx.Button(self, -1, label='Classification',size=(220, 30),style=wx.RAISED_BORDER|wx.BORDER_NONE)
         self.btn1.SetFont(btnfont)
-        #self.btn1.SetForegroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_BTNTEXT))
-        #self.btn1.SetBackgroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_INFOBK))
+        self.btn1.SetForegroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_BTNTEXT))
+        self.btn1.SetBackgroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_INFOBK))
         # self.btn1.Bind(wx.EVT_ENTER_WINDOW, self.hover)
         # self.btn1.Bind(wx.EVT_LEAVE_WINDOW, self.leave)
         #sizer.Add(btn1, pos=(2, 2), span=(1, 2), flag=wx.TOP | wx.LEFT | wx.BOTTOM,border=sizerborder)
@@ -727,8 +727,8 @@ class MainPanel(wx.Panel):
 
         self.btn2 = wx.Button(self, -1, label='Pathogen characterization', size=(220, 30), style=wx.RAISED_BORDER | wx.BORDER_NONE)
         self.btn2.SetFont(btnfont)
-        #self.btn2.SetForegroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_BTNTEXT))
-        #self.btn2.SetBackgroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_INFOBK))
+        self.btn2.SetForegroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_BTNTEXT))
+        self.btn2.SetBackgroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_INFOBK))
         # self.btn2.Bind(wx.EVT_ENTER_WINDOW, self.hover)
         # self.btn2.Bind(wx.EVT_LEAVE_WINDOW, self.leave)
         # sizer.Add(btn1, pos=(2, 2), span=(1, 2), flag=wx.TOP | wx.LEFT | wx.BOTTOM,border=sizerborder)
@@ -736,8 +736,8 @@ class MainPanel(wx.Panel):
 
         self.btn3 = wx.Button(self, -1, label='Misclassification Correction', size=(220, 30), style=wx.RAISED_BORDER | wx.BORDER_NONE)
         self.btn3.SetFont(btnfont)
-        #self.btn3.SetForegroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_BTNTEXT))
-        #self.btn3.SetBackgroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_INFOBK))
+        self.btn3.SetForegroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_BTNTEXT))
+        self.btn3.SetBackgroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_INFOBK))
         # self.btn3.Bind(wx.EVT_ENTER_WINDOW, self.hover)
         # self.btn3.Bind(wx.EVT_LEAVE_WINDOW, self.leave)
         # sizer.Add(btn1, pos=(2, 2), span=(1, 2), flag=wx.TOP | wx.LEFT | wx.BOTTOM,border=sizerborder)
@@ -745,8 +745,8 @@ class MainPanel(wx.Panel):
 
         self.btn4 = wx.Button(self, -1, label='Iterative assembly', size=(220, 30), style=wx.RAISED_BORDER | wx.BORDER_NONE)
         self.btn4.SetFont(btnfont)
-        #self.btn4.SetForegroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_BTNTEXT))
-        #self.btn4.SetBackgroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_INFOBK))
+        self.btn4.SetForegroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_BTNTEXT))
+        self.btn4.SetBackgroundColour(wx.SystemSettings.GetColour(wx.SYS_COLOUR_INFOBK))
 
         self.btn4.Bind(wx.EVT_BUTTON, self.hideFrame)
         #self.btn4.Bind(wx.EVT_ENTER_WINDOW, self.hover)

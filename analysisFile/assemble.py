@@ -2,6 +2,9 @@
 # encoding:utf-8
 import re
 import os
+# import sys
+# sys.path.append("..")
+
 from analysisFile.Scount import Scount
 from updateConfig.configOpt import ConfigUtil
 from log import Logger
@@ -11,6 +14,8 @@ import time
 import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.pyplot import MultipleLocator
+# reload(sys)
+# sys.setdefaultencoding('utf8')
 
 
 class Assemble(object):
@@ -87,7 +92,7 @@ class Assemble(object):
             print logstr
         plt.plot(x, y, linewidth=2)
 
-        plt.xlabel('x', fontsize=9)
+        plt.xlabel('pos', fontsize=9)
         plt.ylabel('y', fontsize=9)
 
         # x_major_locator = MultipleLocator(50)
