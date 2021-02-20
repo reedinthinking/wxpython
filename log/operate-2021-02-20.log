@@ -1,0 +1,383 @@
+2021-02-20 22:15:12,519 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/filedemo1.py[line:304] - INFO: 选择待分析文件：/home/ubuntu/work/input/ref.fasta
+2021-02-20 22:15:12,522 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/filedemo1.py[line:309] - INFO: 成功更新配置文件：inputfile
+2021-02-20 22:15:27,508 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/filedemo1.py[line:328] - INFO: 选择待分析文件：/home/ubuntu/work/input/run_1.fq
+2021-02-20 22:15:27,508 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/filedemo1.py[line:333] - INFO: 成功更新配置文件：seqfile1
+2021-02-20 22:15:38,857 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/filedemo1.py[line:352] - INFO: 选择待分析文件：/home/ubuntu/work/input/run_2.fq
+2021-02-20 22:15:38,860 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/filedemo1.py[line:357] - INFO: 成功更新配置文件：seqfile2
+2021-02-20 22:15:43,788 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/filedemo1.py[line:379] - INFO: 选择输出文件夹：/home/ubuntu/work/output
+2021-02-20 22:15:43,798 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/filedemo1.py[line:384] - INFO: 成功更新配置文件：outputpath
+2021-02-20 22:15:56,372 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/filedemo1.py[line:573] - DEBUG: 调用程序指令：/home/ubuntu/anaconda2/bin/python /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py
+2021-02-20 22:16:00,870 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:172] - INFO: *程序开始运行时间：2021-02-20 22:16:00
+2021-02-20 22:16:00,871 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:178] - INFO: *成功创建临时目标文件夹：/home/ubuntu/work/output/tmp0
+2021-02-20 22:16:00,876 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/filedemo1.py[line:603] - INFO: 正在分析……：{'threshold': '0.98', 'threadnum': '14', 'max_run': '30', 'Blast_ident': '85', 'seq_name': 'run'}
+
+2021-02-20 22:16:00,954 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/filedemo1.py[line:603] - INFO: 正在分析……：*程序开始运行时间：2021-02-20 22:16:00
+
+2021-02-20 22:16:00,957 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/filedemo1.py[line:603] - INFO: 正在分析……：*成功创建临时目标文件夹：/home/ubuntu/work/output/tmp0
+
+2021-02-20 22:16:01,004 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:190] - INFO: *复制待分析文件到临时目标文件夹：cp /home/ubuntu/work/input/ref.fasta /home/ubuntu/work/output/tmp0/megahit_out/final.contigs.fa
+2021-02-20 22:16:01,005 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:194] - INFO: *开始第1次循环------------
+2021-02-20 22:16:01,006 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:201] - INFO: *循环1：迭代开始--10.1：建立文件夹tmp_k：/home/ubuntu/work/output/tmp1
+2021-02-20 22:16:01,009 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/filedemo1.py[line:603] - INFO: 正在分析……：*复制待分析文件到临时目标文件夹：cp /home/ubuntu/work/input/ref.fasta /home/ubuntu/work/output/tmp0/megahit_out/final.contigs.fa
+
+2021-02-20 22:16:01,023 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:213] - INFO: *循环1：迭代开始--10.2：复制第k-1次MEGAHIT输出文件final.contigs.fa至tmp_k，并将final.contigs.fa修改文件名为ref_k-1.fasta--cp /home/ubuntu/work/output/tmp0/megahit_out/final.contigs.fa ./tmp0.fasta
+2021-02-20 22:16:01,095 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/filedemo1.py[line:603] - INFO: 正在分析……：*开始第1次循环------------
+
+2021-02-20 22:16:01,098 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/filedemo1.py[line:603] - INFO: 正在分析……：*循环1：迭代开始--10.1：建立文件夹tmp_k：/home/ubuntu/work/output/tmp1
+
+2021-02-20 22:16:01,125 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16ee9db0>
+2021-02-20 22:16:01,126 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:220] - INFO: *循环1：Step1：调用bwa对ref.fasta建立比对索引--/home/ubuntu/work/dependence/bwa-0.7.17/bwa index -a bwtsw tmp0.fasta 
+2021-02-20 22:16:01,262 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/filedemo1.py[line:603] - INFO: 正在分析……：*循环1：迭代开始--10.2：复制第k-1次MEGAHIT输出文件final.contigs.fa至tmp_k，并将final.contigs.fa修改文件名为ref_k-1.fasta--cp /home/ubuntu/work/output/tmp0/megahit_out/final.contigs.fa ./tmp0.fasta
+
+2021-02-20 22:16:01,368 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/filedemo1.py[line:603] - INFO: 正在分析……：*循环1：Step1：调用bwa对ref.fasta建立比对索引--/home/ubuntu/work/dependence/bwa-0.7.17/bwa index -a bwtsw tmp0.fasta 
+
+2021-02-20 22:16:07,507 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16ee9f60>
+2021-02-20 22:16:07,519 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:228] - INFO: *循环1：Step2：调用bwa的比对功能bwa mem--/home/ubuntu/work/dependence/bwa-0.7.17/bwa mem tmp0.fasta /home/ubuntu/work/input/run_1.fq /home/ubuntu/work/input/run_2.fq > run.sam -t 16 
+2021-02-20 22:16:07,850 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/filedemo1.py[line:603] - INFO: 正在分析……：*循环1：Step2：调用bwa的比对功能bwa mem--/home/ubuntu/work/dependence/bwa-0.7.17/bwa mem tmp0.fasta /home/ubuntu/work/input/run_1.fq /home/ubuntu/work/input/run_2.fq > run.sam -t 16 
+
+2021-02-20 22:16:08,882 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16ee9db0>
+2021-02-20 22:16:08,883 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:234] - INFO: *循环1：Step3：调用samtools 的view功能，提取比对到ref.fasta的比对结果，生成bam格式的文件--samtools view -bS -F 4 run.sam > run.mapped.bam -@ 14 
+2021-02-20 22:16:08,932 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/filedemo1.py[line:603] - INFO: 正在分析……：*循环1：Step3：调用samtools 的view功能，提取比对到ref.fasta的比对结果，生成bam格式的文件--samtools view -bS -F 4 run.sam > run.mapped.bam -@ 14 
+
+2021-02-20 22:16:09,244 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16ee9f60>
+2021-02-20 22:16:09,244 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:240] - INFO: *循环1：Step4：调用samtools的sort功能，对bam格式的比对结果进行重排序--samtools sort -o run.mapped.sorted.bam run.mapped.bam -@ 1 
+2021-02-20 22:16:09,253 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/filedemo1.py[line:603] - INFO: 正在分析……：*循环1：Step4：调用samtools的sort功能，对bam格式的比对结果进行重排序--samtools sort -o run.mapped.sorted.bam run.mapped.bam -@ 1 
+
+2021-02-20 22:16:09,312 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16ee9db0>
+2021-02-20 22:16:09,313 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:246] - INFO: *循环1：Step5：调用samtools的index功能，对重排序的比对结果建立索引--samtools index run.mapped.sorted.bam run.mapped.sorted.bam.bai 
+2021-02-20 22:16:09,316 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/filedemo1.py[line:603] - INFO: 正在分析……：*循环1：Step5：调用samtools的index功能，对重排序的比对结果建立索引--samtools index run.mapped.sorted.bam run.mapped.sorted.bam.bai 
+
+2021-02-20 22:16:09,928 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16ee9f60>
+2021-02-20 22:16:09,928 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:253] - INFO: *循环1：Step6：调用bedtools的bamtofastq功能，将重排序的比对结果转化为fastq格式的序列--/home/ubuntu/work/dependence/bedtools bamtofastq -i run.mapped.sorted.bam -fq run.mapped.fastq 
+2021-02-20 22:16:09,934 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/filedemo1.py[line:603] - INFO: 正在分析……：*循环1：Step6：调用bedtools的bamtofastq功能，将重排序的比对结果转化为fastq格式的序列--/home/ubuntu/work/dependence/bedtools bamtofastq -i run.mapped.sorted.bam -fq run.mapped.fastq 
+
+2021-02-20 22:16:12,803 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16ee9db0>
+2021-02-20 22:16:12,804 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:259] - INFO: *循环1：Step7：调用MEGAHIT进行序列组装--/home/ubuntu/work/dependence/MEGAHIT-1.2.9-Linux-x86_64-static/bin/megahit -r run.mapped.fastq -o megahit_out 
+2021-02-20 22:16:13,100 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/filedemo1.py[line:603] - INFO: 正在分析……：*循环1：Step7：调用MEGAHIT进行序列组装--/home/ubuntu/work/dependence/MEGAHIT-1.2.9-Linux-x86_64-static/bin/megahit -r run.mapped.fastq -o megahit_out 
+
+2021-02-20 22:16:14,003 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16ee9f60>
+2021-02-20 22:16:14,003 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:265] - INFO: *循环1：Step8：调用BLAST的makeblastdb模块对final.contigs.fa建立索引，使用blastn模块根据设定参数对ref.fasta进行同源性比对--/home/ubuntu/work/dependence/ncbi-blast-2.2.28+/bin/makeblastdb -in tmp0.fasta -dbtype nucl -out Sdb 
+2021-02-20 22:16:14,024 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16ee9db0>
+2021-02-20 22:16:14,025 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:271] - INFO: *循环1：Step9：使用个人编写的python脚本对Step8的比对结果进行解析，计算同源性S0--cp ./megahit_out/final.contigs.fa ./
+2021-02-20 22:16:14,207 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16ee9f60>
+2021-02-20 22:16:14,207 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:277] - INFO: *循环1：Step10(new add)：每个tmp文件夹中会生成一个depth.txt文档，该文档的第二列作为横坐标，第三列作为纵坐标--samtools depth -a run.mapped.sorted.bam > depth.txt
+2021-02-20 22:16:14,207 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:80] - INFO: start to draw the picture--the data file：/home/ubuntu/work/output/tmp1/depth.txt;the output picture file:/home/ubuntu/work/output/tmp1/output.png
+2021-02-20 22:16:14,216 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/filedemo1.py[line:603] - INFO: 正在分析……：*循环1：Step8：调用BLAST的makeblastdb模块对final.contigs.fa建立索引，使用blastn模块根据设定参数对ref.fasta进行同源性比对--/home/ubuntu/work/dependence/ncbi-blast-2.2.28+/bin/makeblastdb -in tmp0.fasta -dbtype nucl -out Sdb 
+
+2021-02-20 22:16:14,253 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/filedemo1.py[line:603] - INFO: 正在分析……：*循环1：Step9：使用个人编写的python脚本对Step8的比对结果进行解析，计算同源性S0--cp ./megahit_out/final.contigs.fa ./
+
+2021-02-20 22:16:14,268 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/filedemo1.py[line:603] - INFO: 正在分析……：*循环1：Step10(new add)：每个tmp文件夹中会生成一个depth.txt文档，该文档的第二列作为横坐标，第三列作为纵坐标--samtools depth -a run.mapped.sorted.bam > depth.txt
+
+2021-02-20 22:16:14,272 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/filedemo1.py[line:603] - INFO: 正在分析……：start to draw the picture--the data file：/home/ubuntu/work/output/tmp1/depth.txt;the output picture file:/home/ubuntu/work/output/tmp1/output.png
+
+2021-02-20 22:16:14,282 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/filedemo1.py[line:603] - INFO: 正在分析……：1
+
+2021-02-20 22:16:15,338 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:287] - INFO: *循环1：Step10：调用Scout计算阈值cutoff值Sn
+2021-02-20 22:16:15,343 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/Scount.py[line:90] - INFO: *Step10--打开文件：/home/ubuntu/work/output/tmp1/tmp0.fasta
+2021-02-20 22:16:15,343 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/Scount.py[line:90] - INFO: *Step10--打开文件：/home/ubuntu/work/output/tmp1/tmp0.fasta
+2021-02-20 22:16:15,344 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/filedemo1.py[line:603] - INFO: 正在分析……：*循环1：Step10：调用Scout计算阈值cutoff值Sn
+
+2021-02-20 22:16:15,351 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/filedemo1.py[line:603] - INFO: 正在分析……：*Step10--打开文件：/home/ubuntu/work/output/tmp1/tmp0.fasta
+
+2021-02-20 22:16:21,675 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/Scount.py[line:102] - INFO: *Step10--执行命令：/home/ubuntu/work/dependence/ncbi-blast-2.2.28+/bin/blastn -query /home/ubuntu/work/output/tmp1/final.contigs.fa -out /home/ubuntu/work/output/tmp1/s_85_out -db /home/ubuntu/work/output/tmp1/Sdb -outfmt 6  -num_threads 2 -perc_identity 85 
+2021-02-20 22:16:21,675 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/Scount.py[line:102] - INFO: *Step10--执行命令：/home/ubuntu/work/dependence/ncbi-blast-2.2.28+/bin/blastn -query /home/ubuntu/work/output/tmp1/final.contigs.fa -out /home/ubuntu/work/output/tmp1/s_85_out -db /home/ubuntu/work/output/tmp1/Sdb -outfmt 6  -num_threads 2 -perc_identity 85 
+2021-02-20 22:16:21,676 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/Scount.py[line:107] - INFO: *Step10--打开文件：/home/ubuntu/work/output/tmp1/s_85_out
+2021-02-20 22:16:21,676 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/Scount.py[line:107] - INFO: *Step10--打开文件：/home/ubuntu/work/output/tmp1/s_85_out
+2021-02-20 22:16:21,676 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:194] - INFO: *开始第2次循环------------
+2021-02-20 22:16:21,676 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:194] - INFO: *开始第2次循环------------
+2021-02-20 22:16:21,677 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:201] - INFO: *循环2：迭代开始--10.1：建立文件夹tmp_k：/home/ubuntu/work/output/tmp2
+2021-02-20 22:16:21,677 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:201] - INFO: *循环2：迭代开始--10.1：建立文件夹tmp_k：/home/ubuntu/work/output/tmp2
+2021-02-20 22:16:21,684 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/filedemo1.py[line:603] - INFO: 正在分析……：*Step10--执行命令：/home/ubuntu/work/dependence/ncbi-blast-2.2.28+/bin/blastn -query /home/ubuntu/work/output/tmp1/final.contigs.fa -out /home/ubuntu/work/output/tmp1/s_85_out -db /home/ubuntu/work/output/tmp1/Sdb -outfmt 6  -num_threads 2 -perc_identity 85 
+
+2021-02-20 22:16:21,687 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/filedemo1.py[line:603] - INFO: 正在分析……：*Step10--打开文件：/home/ubuntu/work/output/tmp1/s_85_out
+
+2021-02-20 22:16:21,692 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/filedemo1.py[line:603] - INFO: 正在分析……：*开始第2次循环------------
+
+2021-02-20 22:16:21,701 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/filedemo1.py[line:603] - INFO: 正在分析……：*循环2：迭代开始--10.1：建立文件夹tmp_k：/home/ubuntu/work/output/tmp2
+
+2021-02-20 22:16:21,710 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:213] - INFO: *循环2：迭代开始--10.2：复制第k-1次MEGAHIT输出文件final.contigs.fa至tmp_k，并将final.contigs.fa修改文件名为ref_k-1.fasta--cp /home/ubuntu/work/output/tmp1/megahit_out/final.contigs.fa ./tmp1.fasta
+2021-02-20 22:16:21,710 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:213] - INFO: *循环2：迭代开始--10.2：复制第k-1次MEGAHIT输出文件final.contigs.fa至tmp_k，并将final.contigs.fa修改文件名为ref_k-1.fasta--cp /home/ubuntu/work/output/tmp1/megahit_out/final.contigs.fa ./tmp1.fasta
+2021-02-20 22:16:21,722 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/filedemo1.py[line:603] - INFO: 正在分析……：*循环2：迭代开始--10.2：复制第k-1次MEGAHIT输出文件final.contigs.fa至tmp_k，并将final.contigs.fa修改文件名为ref_k-1.fasta--cp /home/ubuntu/work/output/tmp1/megahit_out/final.contigs.fa ./tmp1.fasta
+
+2021-02-20 22:16:21,810 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16e89270>
+2021-02-20 22:16:21,810 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16e89270>
+2021-02-20 22:16:21,811 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:220] - INFO: *循环2：Step1：调用bwa对ref.fasta建立比对索引--/home/ubuntu/work/dependence/bwa-0.7.17/bwa index -a bwtsw tmp1.fasta 
+2021-02-20 22:16:21,811 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:220] - INFO: *循环2：Step1：调用bwa对ref.fasta建立比对索引--/home/ubuntu/work/dependence/bwa-0.7.17/bwa index -a bwtsw tmp1.fasta 
+2021-02-20 22:16:21,813 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/filedemo1.py[line:603] - INFO: 正在分析……：*循环2：Step1：调用bwa对ref.fasta建立比对索引--/home/ubuntu/work/dependence/bwa-0.7.17/bwa index -a bwtsw tmp1.fasta 
+
+2021-02-20 22:16:25,254 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16e89030>
+2021-02-20 22:16:25,254 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16e89030>
+2021-02-20 22:16:25,256 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:228] - INFO: *循环2：Step2：调用bwa的比对功能bwa mem--/home/ubuntu/work/dependence/bwa-0.7.17/bwa mem tmp1.fasta /home/ubuntu/work/input/run_1.fq /home/ubuntu/work/input/run_2.fq > run.sam -t 16 
+2021-02-20 22:16:25,256 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:228] - INFO: *循环2：Step2：调用bwa的比对功能bwa mem--/home/ubuntu/work/dependence/bwa-0.7.17/bwa mem tmp1.fasta /home/ubuntu/work/input/run_1.fq /home/ubuntu/work/input/run_2.fq > run.sam -t 16 
+2021-02-20 22:16:25,258 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/filedemo1.py[line:603] - INFO: 正在分析……：*循环2：Step2：调用bwa的比对功能bwa mem--/home/ubuntu/work/dependence/bwa-0.7.17/bwa mem tmp1.fasta /home/ubuntu/work/input/run_1.fq /home/ubuntu/work/input/run_2.fq > run.sam -t 16 
+
+2021-02-20 22:16:25,758 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16e89270>
+2021-02-20 22:16:25,758 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16e89270>
+2021-02-20 22:16:25,760 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:234] - INFO: *循环2：Step3：调用samtools 的view功能，提取比对到ref.fasta的比对结果，生成bam格式的文件--samtools view -bS -F 4 run.sam > run.mapped.bam -@ 14 
+2021-02-20 22:16:25,760 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:234] - INFO: *循环2：Step3：调用samtools 的view功能，提取比对到ref.fasta的比对结果，生成bam格式的文件--samtools view -bS -F 4 run.sam > run.mapped.bam -@ 14 
+2021-02-20 22:16:25,762 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/filedemo1.py[line:603] - INFO: 正在分析……：*循环2：Step3：调用samtools 的view功能，提取比对到ref.fasta的比对结果，生成bam格式的文件--samtools view -bS -F 4 run.sam > run.mapped.bam -@ 14 
+
+2021-02-20 22:16:26,184 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16e89030>
+2021-02-20 22:16:26,184 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16e89030>
+2021-02-20 22:16:26,184 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:240] - INFO: *循环2：Step4：调用samtools的sort功能，对bam格式的比对结果进行重排序--samtools sort -o run.mapped.sorted.bam run.mapped.bam -@ 1 
+2021-02-20 22:16:26,184 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:240] - INFO: *循环2：Step4：调用samtools的sort功能，对bam格式的比对结果进行重排序--samtools sort -o run.mapped.sorted.bam run.mapped.bam -@ 1 
+2021-02-20 22:16:26,189 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/filedemo1.py[line:603] - INFO: 正在分析……：*循环2：Step4：调用samtools的sort功能，对bam格式的比对结果进行重排序--samtools sort -o run.mapped.sorted.bam run.mapped.bam -@ 1 
+
+2021-02-20 22:16:26,254 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16e89270>
+2021-02-20 22:16:26,254 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16e89270>
+2021-02-20 22:16:26,255 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:246] - INFO: *循环2：Step5：调用samtools的index功能，对重排序的比对结果建立索引--samtools index run.mapped.sorted.bam run.mapped.sorted.bam.bai 
+2021-02-20 22:16:26,255 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:246] - INFO: *循环2：Step5：调用samtools的index功能，对重排序的比对结果建立索引--samtools index run.mapped.sorted.bam run.mapped.sorted.bam.bai 
+2021-02-20 22:16:26,261 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/filedemo1.py[line:603] - INFO: 正在分析……：*循环2：Step5：调用samtools的index功能，对重排序的比对结果建立索引--samtools index run.mapped.sorted.bam run.mapped.sorted.bam.bai 
+
+2021-02-20 22:16:26,796 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16e89030>
+2021-02-20 22:16:26,796 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16e89030>
+2021-02-20 22:16:26,797 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:253] - INFO: *循环2：Step6：调用bedtools的bamtofastq功能，将重排序的比对结果转化为fastq格式的序列--/home/ubuntu/work/dependence/bedtools bamtofastq -i run.mapped.sorted.bam -fq run.mapped.fastq 
+2021-02-20 22:16:26,797 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:253] - INFO: *循环2：Step6：调用bedtools的bamtofastq功能，将重排序的比对结果转化为fastq格式的序列--/home/ubuntu/work/dependence/bedtools bamtofastq -i run.mapped.sorted.bam -fq run.mapped.fastq 
+2021-02-20 22:16:26,801 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/filedemo1.py[line:603] - INFO: 正在分析……：*循环2：Step6：调用bedtools的bamtofastq功能，将重排序的比对结果转化为fastq格式的序列--/home/ubuntu/work/dependence/bedtools bamtofastq -i run.mapped.sorted.bam -fq run.mapped.fastq 
+
+2021-02-20 22:16:29,070 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16e89270>
+2021-02-20 22:16:29,070 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16e89270>
+2021-02-20 22:16:29,081 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:259] - INFO: *循环2：Step7：调用MEGAHIT进行序列组装--/home/ubuntu/work/dependence/MEGAHIT-1.2.9-Linux-x86_64-static/bin/megahit -r run.mapped.fastq -o megahit_out 
+2021-02-20 22:16:29,081 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:259] - INFO: *循环2：Step7：调用MEGAHIT进行序列组装--/home/ubuntu/work/dependence/MEGAHIT-1.2.9-Linux-x86_64-static/bin/megahit -r run.mapped.fastq -o megahit_out 
+2021-02-20 22:16:29,172 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16e89030>
+2021-02-20 22:16:29,172 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16e89030>
+2021-02-20 22:16:29,179 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:265] - INFO: *循环2：Step8：调用BLAST的makeblastdb模块对final.contigs.fa建立索引，使用blastn模块根据设定参数对ref.fasta进行同源性比对--/home/ubuntu/work/dependence/ncbi-blast-2.2.28+/bin/makeblastdb -in tmp1.fasta -dbtype nucl -out Sdb 
+2021-02-20 22:16:29,179 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:265] - INFO: *循环2：Step8：调用BLAST的makeblastdb模块对final.contigs.fa建立索引，使用blastn模块根据设定参数对ref.fasta进行同源性比对--/home/ubuntu/work/dependence/ncbi-blast-2.2.28+/bin/makeblastdb -in tmp1.fasta -dbtype nucl -out Sdb 
+2021-02-20 22:16:29,200 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16e89270>
+2021-02-20 22:16:29,200 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16e89270>
+2021-02-20 22:16:29,200 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:271] - INFO: *循环2：Step9：使用个人编写的python脚本对Step8的比对结果进行解析，计算同源性S0--cp ./megahit_out/final.contigs.fa ./
+2021-02-20 22:16:29,200 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:271] - INFO: *循环2：Step9：使用个人编写的python脚本对Step8的比对结果进行解析，计算同源性S0--cp ./megahit_out/final.contigs.fa ./
+2021-02-20 22:16:29,244 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/filedemo1.py[line:603] - INFO: 正在分析……：*循环2：Step7：调用MEGAHIT进行序列组装--/home/ubuntu/work/dependence/MEGAHIT-1.2.9-Linux-x86_64-static/bin/megahit -r run.mapped.fastq -o megahit_out 
+
+2021-02-20 22:16:29,271 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/filedemo1.py[line:603] - INFO: 正在分析……：*循环2：Step8：调用BLAST的makeblastdb模块对final.contigs.fa建立索引，使用blastn模块根据设定参数对ref.fasta进行同源性比对--/home/ubuntu/work/dependence/ncbi-blast-2.2.28+/bin/makeblastdb -in tmp1.fasta -dbtype nucl -out Sdb 
+
+2021-02-20 22:16:29,281 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/filedemo1.py[line:603] - INFO: 正在分析……：*循环2：Step9：使用个人编写的python脚本对Step8的比对结果进行解析，计算同源性S0--cp ./megahit_out/final.contigs.fa ./
+
+2021-02-20 22:16:29,570 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16e89030>
+2021-02-20 22:16:29,570 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16e89030>
+2021-02-20 22:16:29,570 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:277] - INFO: *循环2：Step10(new add)：每个tmp文件夹中会生成一个depth.txt文档，该文档的第二列作为横坐标，第三列作为纵坐标--samtools depth -a run.mapped.sorted.bam > depth.txt
+2021-02-20 22:16:29,570 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:277] - INFO: *循环2：Step10(new add)：每个tmp文件夹中会生成一个depth.txt文档，该文档的第二列作为横坐标，第三列作为纵坐标--samtools depth -a run.mapped.sorted.bam > depth.txt
+2021-02-20 22:16:29,570 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:80] - INFO: start to draw the picture--the data file：/home/ubuntu/work/output/tmp2/depth.txt;the output picture file:/home/ubuntu/work/output/tmp2/output.png
+2021-02-20 22:16:29,570 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:80] - INFO: start to draw the picture--the data file：/home/ubuntu/work/output/tmp2/depth.txt;the output picture file:/home/ubuntu/work/output/tmp2/output.png
+2021-02-20 22:16:29,577 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/filedemo1.py[line:603] - INFO: 正在分析……：*循环2：Step10(new add)：每个tmp文件夹中会生成一个depth.txt文档，该文档的第二列作为横坐标，第三列作为纵坐标--samtools depth -a run.mapped.sorted.bam > depth.txt
+
+2021-02-20 22:16:29,579 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/filedemo1.py[line:603] - INFO: 正在分析……：start to draw the picture--the data file：/home/ubuntu/work/output/tmp2/depth.txt;the output picture file:/home/ubuntu/work/output/tmp2/output.png
+
+2021-02-20 22:16:29,580 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/filedemo1.py[line:603] - INFO: 正在分析……：1
+
+2021-02-20 22:16:29,733 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:287] - INFO: *循环2：Step10：调用Scout计算阈值cutoff值Sn
+2021-02-20 22:16:29,733 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:287] - INFO: *循环2：Step10：调用Scout计算阈值cutoff值Sn
+2021-02-20 22:16:29,741 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/Scount.py[line:90] - INFO: *Step10--打开文件：/home/ubuntu/work/output/tmp2/tmp1.fasta
+2021-02-20 22:16:29,741 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/Scount.py[line:90] - INFO: *Step10--打开文件：/home/ubuntu/work/output/tmp2/tmp1.fasta
+2021-02-20 22:16:29,741 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/Scount.py[line:90] - INFO: *Step10--打开文件：/home/ubuntu/work/output/tmp2/tmp1.fasta
+2021-02-20 22:16:29,739 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/filedemo1.py[line:603] - INFO: 正在分析……：*循环2：Step10：调用Scout计算阈值cutoff值Sn
+
+2021-02-20 22:16:29,748 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/filedemo1.py[line:603] - INFO: 正在分析……：*Step10--打开文件：/home/ubuntu/work/output/tmp2/tmp1.fasta
+
+2021-02-20 22:16:29,924 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/Scount.py[line:102] - INFO: *Step10--执行命令：/home/ubuntu/work/dependence/ncbi-blast-2.2.28+/bin/blastn -query /home/ubuntu/work/output/tmp2/final.contigs.fa -out /home/ubuntu/work/output/tmp2/s_85_out -db /home/ubuntu/work/output/tmp2/Sdb -outfmt 6  -num_threads 2 -perc_identity 85 
+2021-02-20 22:16:29,924 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/Scount.py[line:102] - INFO: *Step10--执行命令：/home/ubuntu/work/dependence/ncbi-blast-2.2.28+/bin/blastn -query /home/ubuntu/work/output/tmp2/final.contigs.fa -out /home/ubuntu/work/output/tmp2/s_85_out -db /home/ubuntu/work/output/tmp2/Sdb -outfmt 6  -num_threads 2 -perc_identity 85 
+2021-02-20 22:16:29,924 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/Scount.py[line:102] - INFO: *Step10--执行命令：/home/ubuntu/work/dependence/ncbi-blast-2.2.28+/bin/blastn -query /home/ubuntu/work/output/tmp2/final.contigs.fa -out /home/ubuntu/work/output/tmp2/s_85_out -db /home/ubuntu/work/output/tmp2/Sdb -outfmt 6  -num_threads 2 -perc_identity 85 
+2021-02-20 22:16:29,925 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/Scount.py[line:107] - INFO: *Step10--打开文件：/home/ubuntu/work/output/tmp2/s_85_out
+2021-02-20 22:16:29,925 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/Scount.py[line:107] - INFO: *Step10--打开文件：/home/ubuntu/work/output/tmp2/s_85_out
+2021-02-20 22:16:29,925 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/Scount.py[line:107] - INFO: *Step10--打开文件：/home/ubuntu/work/output/tmp2/s_85_out
+2021-02-20 22:16:29,926 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:194] - INFO: *开始第3次循环------------
+2021-02-20 22:16:29,926 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:194] - INFO: *开始第3次循环------------
+2021-02-20 22:16:29,926 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:194] - INFO: *开始第3次循环------------
+2021-02-20 22:16:29,927 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:201] - INFO: *循环3：迭代开始--10.1：建立文件夹tmp_k：/home/ubuntu/work/output/tmp3
+2021-02-20 22:16:29,927 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:201] - INFO: *循环3：迭代开始--10.1：建立文件夹tmp_k：/home/ubuntu/work/output/tmp3
+2021-02-20 22:16:29,927 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:201] - INFO: *循环3：迭代开始--10.1：建立文件夹tmp_k：/home/ubuntu/work/output/tmp3
+2021-02-20 22:16:29,941 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/filedemo1.py[line:603] - INFO: 正在分析……：*Step10--执行命令：/home/ubuntu/work/dependence/ncbi-blast-2.2.28+/bin/blastn -query /home/ubuntu/work/output/tmp2/final.contigs.fa -out /home/ubuntu/work/output/tmp2/s_85_out -db /home/ubuntu/work/output/tmp2/Sdb -outfmt 6  -num_threads 2 -perc_identity 85 
+
+2021-02-20 22:16:29,943 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:213] - INFO: *循环3：迭代开始--10.2：复制第k-1次MEGAHIT输出文件final.contigs.fa至tmp_k，并将final.contigs.fa修改文件名为ref_k-1.fasta--cp /home/ubuntu/work/output/tmp2/megahit_out/final.contigs.fa ./tmp2.fasta
+2021-02-20 22:16:29,943 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:213] - INFO: *循环3：迭代开始--10.2：复制第k-1次MEGAHIT输出文件final.contigs.fa至tmp_k，并将final.contigs.fa修改文件名为ref_k-1.fasta--cp /home/ubuntu/work/output/tmp2/megahit_out/final.contigs.fa ./tmp2.fasta
+2021-02-20 22:16:29,943 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:213] - INFO: *循环3：迭代开始--10.2：复制第k-1次MEGAHIT输出文件final.contigs.fa至tmp_k，并将final.contigs.fa修改文件名为ref_k-1.fasta--cp /home/ubuntu/work/output/tmp2/megahit_out/final.contigs.fa ./tmp2.fasta
+2021-02-20 22:16:29,948 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/filedemo1.py[line:603] - INFO: 正在分析……：*Step10--打开文件：/home/ubuntu/work/output/tmp2/s_85_out
+
+2021-02-20 22:16:29,995 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/filedemo1.py[line:603] - INFO: 正在分析……：*开始第3次循环------------
+
+2021-02-20 22:16:29,997 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/filedemo1.py[line:603] - INFO: 正在分析……：*循环3：迭代开始--10.1：建立文件夹tmp_k：/home/ubuntu/work/output/tmp3
+
+2021-02-20 22:16:30,000 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/filedemo1.py[line:603] - INFO: 正在分析……：*循环3：迭代开始--10.2：复制第k-1次MEGAHIT输出文件final.contigs.fa至tmp_k，并将final.contigs.fa修改文件名为ref_k-1.fasta--cp /home/ubuntu/work/output/tmp2/megahit_out/final.contigs.fa ./tmp2.fasta
+
+2021-02-20 22:16:30,067 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16e89540>
+2021-02-20 22:16:30,067 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16e89540>
+2021-02-20 22:16:30,067 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16e89540>
+2021-02-20 22:16:30,068 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:220] - INFO: *循环3：Step1：调用bwa对ref.fasta建立比对索引--/home/ubuntu/work/dependence/bwa-0.7.17/bwa index -a bwtsw tmp2.fasta 
+2021-02-20 22:16:30,068 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:220] - INFO: *循环3：Step1：调用bwa对ref.fasta建立比对索引--/home/ubuntu/work/dependence/bwa-0.7.17/bwa index -a bwtsw tmp2.fasta 
+2021-02-20 22:16:30,068 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:220] - INFO: *循环3：Step1：调用bwa对ref.fasta建立比对索引--/home/ubuntu/work/dependence/bwa-0.7.17/bwa index -a bwtsw tmp2.fasta 
+2021-02-20 22:16:30,073 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/filedemo1.py[line:603] - INFO: 正在分析……：*循环3：Step1：调用bwa对ref.fasta建立比对索引--/home/ubuntu/work/dependence/bwa-0.7.17/bwa index -a bwtsw tmp2.fasta 
+
+2021-02-20 22:16:32,841 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16e89030>
+2021-02-20 22:16:32,841 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16e89030>
+2021-02-20 22:16:32,841 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16e89030>
+2021-02-20 22:16:32,841 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:228] - INFO: *循环3：Step2：调用bwa的比对功能bwa mem--/home/ubuntu/work/dependence/bwa-0.7.17/bwa mem tmp2.fasta /home/ubuntu/work/input/run_1.fq /home/ubuntu/work/input/run_2.fq > run.sam -t 16 
+2021-02-20 22:16:32,841 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:228] - INFO: *循环3：Step2：调用bwa的比对功能bwa mem--/home/ubuntu/work/dependence/bwa-0.7.17/bwa mem tmp2.fasta /home/ubuntu/work/input/run_1.fq /home/ubuntu/work/input/run_2.fq > run.sam -t 16 
+2021-02-20 22:16:32,841 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:228] - INFO: *循环3：Step2：调用bwa的比对功能bwa mem--/home/ubuntu/work/dependence/bwa-0.7.17/bwa mem tmp2.fasta /home/ubuntu/work/input/run_1.fq /home/ubuntu/work/input/run_2.fq > run.sam -t 16 
+2021-02-20 22:16:32,847 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/filedemo1.py[line:603] - INFO: 正在分析……：*循环3：Step2：调用bwa的比对功能bwa mem--/home/ubuntu/work/dependence/bwa-0.7.17/bwa mem tmp2.fasta /home/ubuntu/work/input/run_1.fq /home/ubuntu/work/input/run_2.fq > run.sam -t 16 
+
+2021-02-20 22:16:33,321 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16e89540>
+2021-02-20 22:16:33,321 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16e89540>
+2021-02-20 22:16:33,321 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16e89540>
+2021-02-20 22:16:33,321 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:234] - INFO: *循环3：Step3：调用samtools 的view功能，提取比对到ref.fasta的比对结果，生成bam格式的文件--samtools view -bS -F 4 run.sam > run.mapped.bam -@ 14 
+2021-02-20 22:16:33,321 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:234] - INFO: *循环3：Step3：调用samtools 的view功能，提取比对到ref.fasta的比对结果，生成bam格式的文件--samtools view -bS -F 4 run.sam > run.mapped.bam -@ 14 
+2021-02-20 22:16:33,321 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:234] - INFO: *循环3：Step3：调用samtools 的view功能，提取比对到ref.fasta的比对结果，生成bam格式的文件--samtools view -bS -F 4 run.sam > run.mapped.bam -@ 14 
+2021-02-20 22:16:33,326 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/filedemo1.py[line:603] - INFO: 正在分析……：*循环3：Step3：调用samtools 的view功能，提取比对到ref.fasta的比对结果，生成bam格式的文件--samtools view -bS -F 4 run.sam > run.mapped.bam -@ 14 
+
+2021-02-20 22:16:34,001 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16e89030>
+2021-02-20 22:16:34,001 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16e89030>
+2021-02-20 22:16:34,001 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16e89030>
+2021-02-20 22:16:34,001 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:240] - INFO: *循环3：Step4：调用samtools的sort功能，对bam格式的比对结果进行重排序--samtools sort -o run.mapped.sorted.bam run.mapped.bam -@ 1 
+2021-02-20 22:16:34,001 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:240] - INFO: *循环3：Step4：调用samtools的sort功能，对bam格式的比对结果进行重排序--samtools sort -o run.mapped.sorted.bam run.mapped.bam -@ 1 
+2021-02-20 22:16:34,001 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:240] - INFO: *循环3：Step4：调用samtools的sort功能，对bam格式的比对结果进行重排序--samtools sort -o run.mapped.sorted.bam run.mapped.bam -@ 1 
+2021-02-20 22:16:34,007 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/filedemo1.py[line:603] - INFO: 正在分析……：*循环3：Step4：调用samtools的sort功能，对bam格式的比对结果进行重排序--samtools sort -o run.mapped.sorted.bam run.mapped.bam -@ 1 
+
+2021-02-20 22:16:34,080 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16e89540>
+2021-02-20 22:16:34,080 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16e89540>
+2021-02-20 22:16:34,080 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16e89540>
+2021-02-20 22:16:34,081 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:246] - INFO: *循环3：Step5：调用samtools的index功能，对重排序的比对结果建立索引--samtools index run.mapped.sorted.bam run.mapped.sorted.bam.bai 
+2021-02-20 22:16:34,081 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:246] - INFO: *循环3：Step5：调用samtools的index功能，对重排序的比对结果建立索引--samtools index run.mapped.sorted.bam run.mapped.sorted.bam.bai 
+2021-02-20 22:16:34,081 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:246] - INFO: *循环3：Step5：调用samtools的index功能，对重排序的比对结果建立索引--samtools index run.mapped.sorted.bam run.mapped.sorted.bam.bai 
+2021-02-20 22:16:34,084 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/filedemo1.py[line:603] - INFO: 正在分析……：*循环3：Step5：调用samtools的index功能，对重排序的比对结果建立索引--samtools index run.mapped.sorted.bam run.mapped.sorted.bam.bai 
+
+2021-02-20 22:16:34,685 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16e89030>
+2021-02-20 22:16:34,685 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16e89030>
+2021-02-20 22:16:34,685 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16e89030>
+2021-02-20 22:16:34,686 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:253] - INFO: *循环3：Step6：调用bedtools的bamtofastq功能，将重排序的比对结果转化为fastq格式的序列--/home/ubuntu/work/dependence/bedtools bamtofastq -i run.mapped.sorted.bam -fq run.mapped.fastq 
+2021-02-20 22:16:34,686 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:253] - INFO: *循环3：Step6：调用bedtools的bamtofastq功能，将重排序的比对结果转化为fastq格式的序列--/home/ubuntu/work/dependence/bedtools bamtofastq -i run.mapped.sorted.bam -fq run.mapped.fastq 
+2021-02-20 22:16:34,686 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:253] - INFO: *循环3：Step6：调用bedtools的bamtofastq功能，将重排序的比对结果转化为fastq格式的序列--/home/ubuntu/work/dependence/bedtools bamtofastq -i run.mapped.sorted.bam -fq run.mapped.fastq 
+2021-02-20 22:16:34,691 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/filedemo1.py[line:603] - INFO: 正在分析……：*循环3：Step6：调用bedtools的bamtofastq功能，将重排序的比对结果转化为fastq格式的序列--/home/ubuntu/work/dependence/bedtools bamtofastq -i run.mapped.sorted.bam -fq run.mapped.fastq 
+
+2021-02-20 22:16:37,105 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16e89540>
+2021-02-20 22:16:37,105 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16e89540>
+2021-02-20 22:16:37,105 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16e89540>
+2021-02-20 22:16:37,106 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:259] - INFO: *循环3：Step7：调用MEGAHIT进行序列组装--/home/ubuntu/work/dependence/MEGAHIT-1.2.9-Linux-x86_64-static/bin/megahit -r run.mapped.fastq -o megahit_out 
+2021-02-20 22:16:37,106 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:259] - INFO: *循环3：Step7：调用MEGAHIT进行序列组装--/home/ubuntu/work/dependence/MEGAHIT-1.2.9-Linux-x86_64-static/bin/megahit -r run.mapped.fastq -o megahit_out 
+2021-02-20 22:16:37,106 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:259] - INFO: *循环3：Step7：调用MEGAHIT进行序列组装--/home/ubuntu/work/dependence/MEGAHIT-1.2.9-Linux-x86_64-static/bin/megahit -r run.mapped.fastq -o megahit_out 
+2021-02-20 22:16:37,174 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/filedemo1.py[line:603] - INFO: 正在分析……：*循环3：Step7：调用MEGAHIT进行序列组装--/home/ubuntu/work/dependence/MEGAHIT-1.2.9-Linux-x86_64-static/bin/megahit -r run.mapped.fastq -o megahit_out 
+
+2021-02-20 22:16:37,210 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16e89030>
+2021-02-20 22:16:37,210 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16e89030>
+2021-02-20 22:16:37,210 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16e89030>
+2021-02-20 22:16:37,211 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:265] - INFO: *循环3：Step8：调用BLAST的makeblastdb模块对final.contigs.fa建立索引，使用blastn模块根据设定参数对ref.fasta进行同源性比对--/home/ubuntu/work/dependence/ncbi-blast-2.2.28+/bin/makeblastdb -in tmp2.fasta -dbtype nucl -out Sdb 
+2021-02-20 22:16:37,211 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:265] - INFO: *循环3：Step8：调用BLAST的makeblastdb模块对final.contigs.fa建立索引，使用blastn模块根据设定参数对ref.fasta进行同源性比对--/home/ubuntu/work/dependence/ncbi-blast-2.2.28+/bin/makeblastdb -in tmp2.fasta -dbtype nucl -out Sdb 
+2021-02-20 22:16:37,211 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:265] - INFO: *循环3：Step8：调用BLAST的makeblastdb模块对final.contigs.fa建立索引，使用blastn模块根据设定参数对ref.fasta进行同源性比对--/home/ubuntu/work/dependence/ncbi-blast-2.2.28+/bin/makeblastdb -in tmp2.fasta -dbtype nucl -out Sdb 
+2021-02-20 22:16:37,218 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/filedemo1.py[line:603] - INFO: 正在分析……：*循环3：Step8：调用BLAST的makeblastdb模块对final.contigs.fa建立索引，使用blastn模块根据设定参数对ref.fasta进行同源性比对--/home/ubuntu/work/dependence/ncbi-blast-2.2.28+/bin/makeblastdb -in tmp2.fasta -dbtype nucl -out Sdb 
+
+2021-02-20 22:16:37,264 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16e89540>
+2021-02-20 22:16:37,264 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16e89540>
+2021-02-20 22:16:37,264 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16e89540>
+2021-02-20 22:16:37,265 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:271] - INFO: *循环3：Step9：使用个人编写的python脚本对Step8的比对结果进行解析，计算同源性S0--cp ./megahit_out/final.contigs.fa ./
+2021-02-20 22:16:37,265 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:271] - INFO: *循环3：Step9：使用个人编写的python脚本对Step8的比对结果进行解析，计算同源性S0--cp ./megahit_out/final.contigs.fa ./
+2021-02-20 22:16:37,265 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:271] - INFO: *循环3：Step9：使用个人编写的python脚本对Step8的比对结果进行解析，计算同源性S0--cp ./megahit_out/final.contigs.fa ./
+2021-02-20 22:16:37,270 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/filedemo1.py[line:603] - INFO: 正在分析……：*循环3：Step9：使用个人编写的python脚本对Step8的比对结果进行解析，计算同源性S0--cp ./megahit_out/final.contigs.fa ./
+
+2021-02-20 22:16:37,634 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16e89030>
+2021-02-20 22:16:37,634 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16e89030>
+2021-02-20 22:16:37,634 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16e89030>
+2021-02-20 22:16:37,634 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:277] - INFO: *循环3：Step10(new add)：每个tmp文件夹中会生成一个depth.txt文档，该文档的第二列作为横坐标，第三列作为纵坐标--samtools depth -a run.mapped.sorted.bam > depth.txt
+2021-02-20 22:16:37,634 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:277] - INFO: *循环3：Step10(new add)：每个tmp文件夹中会生成一个depth.txt文档，该文档的第二列作为横坐标，第三列作为纵坐标--samtools depth -a run.mapped.sorted.bam > depth.txt
+2021-02-20 22:16:37,634 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:277] - INFO: *循环3：Step10(new add)：每个tmp文件夹中会生成一个depth.txt文档，该文档的第二列作为横坐标，第三列作为纵坐标--samtools depth -a run.mapped.sorted.bam > depth.txt
+2021-02-20 22:16:37,635 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:80] - INFO: start to draw the picture--the data file：/home/ubuntu/work/output/tmp3/depth.txt;the output picture file:/home/ubuntu/work/output/tmp3/output.png
+2021-02-20 22:16:37,635 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:80] - INFO: start to draw the picture--the data file：/home/ubuntu/work/output/tmp3/depth.txt;the output picture file:/home/ubuntu/work/output/tmp3/output.png
+2021-02-20 22:16:37,635 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:80] - INFO: start to draw the picture--the data file：/home/ubuntu/work/output/tmp3/depth.txt;the output picture file:/home/ubuntu/work/output/tmp3/output.png
+2021-02-20 22:16:37,638 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/filedemo1.py[line:603] - INFO: 正在分析……：*循环3：Step10(new add)：每个tmp文件夹中会生成一个depth.txt文档，该文档的第二列作为横坐标，第三列作为纵坐标--samtools depth -a run.mapped.sorted.bam > depth.txt
+
+2021-02-20 22:16:37,642 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/filedemo1.py[line:603] - INFO: 正在分析……：start to draw the picture--the data file：/home/ubuntu/work/output/tmp3/depth.txt;the output picture file:/home/ubuntu/work/output/tmp3/output.png
+
+2021-02-20 22:16:37,643 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/filedemo1.py[line:603] - INFO: 正在分析……：1
+
+2021-02-20 22:16:37,899 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:287] - INFO: *循环3：Step10：调用Scout计算阈值cutoff值Sn
+2021-02-20 22:16:37,899 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:287] - INFO: *循环3：Step10：调用Scout计算阈值cutoff值Sn
+2021-02-20 22:16:37,899 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:287] - INFO: *循环3：Step10：调用Scout计算阈值cutoff值Sn
+2021-02-20 22:16:37,909 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/filedemo1.py[line:603] - INFO: 正在分析……：*循环3：Step10：调用Scout计算阈值cutoff值Sn
+
+2021-02-20 22:16:37,913 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/Scount.py[line:90] - INFO: *Step10--打开文件：/home/ubuntu/work/output/tmp3/tmp2.fasta
+2021-02-20 22:16:37,913 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/Scount.py[line:90] - INFO: *Step10--打开文件：/home/ubuntu/work/output/tmp3/tmp2.fasta
+2021-02-20 22:16:37,913 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/Scount.py[line:90] - INFO: *Step10--打开文件：/home/ubuntu/work/output/tmp3/tmp2.fasta
+2021-02-20 22:16:37,913 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/Scount.py[line:90] - INFO: *Step10--打开文件：/home/ubuntu/work/output/tmp3/tmp2.fasta
+2021-02-20 22:16:37,919 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/filedemo1.py[line:603] - INFO: 正在分析……：*Step10--打开文件：/home/ubuntu/work/output/tmp3/tmp2.fasta
+
+2021-02-20 22:16:38,095 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/Scount.py[line:102] - INFO: *Step10--执行命令：/home/ubuntu/work/dependence/ncbi-blast-2.2.28+/bin/blastn -query /home/ubuntu/work/output/tmp3/final.contigs.fa -out /home/ubuntu/work/output/tmp3/s_85_out -db /home/ubuntu/work/output/tmp3/Sdb -outfmt 6  -num_threads 2 -perc_identity 85 
+2021-02-20 22:16:38,095 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/Scount.py[line:102] - INFO: *Step10--执行命令：/home/ubuntu/work/dependence/ncbi-blast-2.2.28+/bin/blastn -query /home/ubuntu/work/output/tmp3/final.contigs.fa -out /home/ubuntu/work/output/tmp3/s_85_out -db /home/ubuntu/work/output/tmp3/Sdb -outfmt 6  -num_threads 2 -perc_identity 85 
+2021-02-20 22:16:38,095 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/Scount.py[line:102] - INFO: *Step10--执行命令：/home/ubuntu/work/dependence/ncbi-blast-2.2.28+/bin/blastn -query /home/ubuntu/work/output/tmp3/final.contigs.fa -out /home/ubuntu/work/output/tmp3/s_85_out -db /home/ubuntu/work/output/tmp3/Sdb -outfmt 6  -num_threads 2 -perc_identity 85 
+2021-02-20 22:16:38,095 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/Scount.py[line:102] - INFO: *Step10--执行命令：/home/ubuntu/work/dependence/ncbi-blast-2.2.28+/bin/blastn -query /home/ubuntu/work/output/tmp3/final.contigs.fa -out /home/ubuntu/work/output/tmp3/s_85_out -db /home/ubuntu/work/output/tmp3/Sdb -outfmt 6  -num_threads 2 -perc_identity 85 
+2021-02-20 22:16:38,096 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/Scount.py[line:107] - INFO: *Step10--打开文件：/home/ubuntu/work/output/tmp3/s_85_out
+2021-02-20 22:16:38,096 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/Scount.py[line:107] - INFO: *Step10--打开文件：/home/ubuntu/work/output/tmp3/s_85_out
+2021-02-20 22:16:38,096 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/Scount.py[line:107] - INFO: *Step10--打开文件：/home/ubuntu/work/output/tmp3/s_85_out
+2021-02-20 22:16:38,096 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/Scount.py[line:107] - INFO: *Step10--打开文件：/home/ubuntu/work/output/tmp3/s_85_out
+2021-02-20 22:16:38,097 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:194] - INFO: *开始第4次循环------------
+2021-02-20 22:16:38,097 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:194] - INFO: *开始第4次循环------------
+2021-02-20 22:16:38,097 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:194] - INFO: *开始第4次循环------------
+2021-02-20 22:16:38,097 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:194] - INFO: *开始第4次循环------------
+2021-02-20 22:16:38,097 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:201] - INFO: *循环4：迭代开始--10.1：建立文件夹tmp_k：/home/ubuntu/work/output/tmp4
+2021-02-20 22:16:38,097 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:201] - INFO: *循环4：迭代开始--10.1：建立文件夹tmp_k：/home/ubuntu/work/output/tmp4
+2021-02-20 22:16:38,097 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:201] - INFO: *循环4：迭代开始--10.1：建立文件夹tmp_k：/home/ubuntu/work/output/tmp4
+2021-02-20 22:16:38,097 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:201] - INFO: *循环4：迭代开始--10.1：建立文件夹tmp_k：/home/ubuntu/work/output/tmp4
+2021-02-20 22:16:38,100 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/filedemo1.py[line:603] - INFO: 正在分析……：*Step10--执行命令：/home/ubuntu/work/dependence/ncbi-blast-2.2.28+/bin/blastn -query /home/ubuntu/work/output/tmp3/final.contigs.fa -out /home/ubuntu/work/output/tmp3/s_85_out -db /home/ubuntu/work/output/tmp3/Sdb -outfmt 6  -num_threads 2 -perc_identity 85 
+
+2021-02-20 22:16:38,105 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/filedemo1.py[line:603] - INFO: 正在分析……：*Step10--打开文件：/home/ubuntu/work/output/tmp3/s_85_out
+
+2021-02-20 22:16:38,106 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:213] - INFO: *循环4：迭代开始--10.2：复制第k-1次MEGAHIT输出文件final.contigs.fa至tmp_k，并将final.contigs.fa修改文件名为ref_k-1.fasta--cp /home/ubuntu/work/output/tmp3/megahit_out/final.contigs.fa ./tmp3.fasta
+2021-02-20 22:16:38,106 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:213] - INFO: *循环4：迭代开始--10.2：复制第k-1次MEGAHIT输出文件final.contigs.fa至tmp_k，并将final.contigs.fa修改文件名为ref_k-1.fasta--cp /home/ubuntu/work/output/tmp3/megahit_out/final.contigs.fa ./tmp3.fasta
+2021-02-20 22:16:38,106 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:213] - INFO: *循环4：迭代开始--10.2：复制第k-1次MEGAHIT输出文件final.contigs.fa至tmp_k，并将final.contigs.fa修改文件名为ref_k-1.fasta--cp /home/ubuntu/work/output/tmp3/megahit_out/final.contigs.fa ./tmp3.fasta
+2021-02-20 22:16:38,106 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:213] - INFO: *循环4：迭代开始--10.2：复制第k-1次MEGAHIT输出文件final.contigs.fa至tmp_k，并将final.contigs.fa修改文件名为ref_k-1.fasta--cp /home/ubuntu/work/output/tmp3/megahit_out/final.contigs.fa ./tmp3.fasta
+2021-02-20 22:16:38,109 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/filedemo1.py[line:603] - INFO: 正在分析……：*开始第4次循环------------
+
+2021-02-20 22:16:38,111 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/filedemo1.py[line:603] - INFO: 正在分析……：*循环4：迭代开始--10.1：建立文件夹tmp_k：/home/ubuntu/work/output/tmp4
+
+2021-02-20 22:16:38,114 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/filedemo1.py[line:603] - INFO: 正在分析……：*循环4：迭代开始--10.2：复制第k-1次MEGAHIT输出文件final.contigs.fa至tmp_k，并将final.contigs.fa修改文件名为ref_k-1.fasta--cp /home/ubuntu/work/output/tmp3/megahit_out/final.contigs.fa ./tmp3.fasta
+
+2021-02-20 22:16:38,173 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16e89030>
+2021-02-20 22:16:38,173 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16e89030>
+2021-02-20 22:16:38,173 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16e89030>
+2021-02-20 22:16:38,173 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16e89030>
+2021-02-20 22:16:38,174 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:220] - INFO: *循环4：Step1：调用bwa对ref.fasta建立比对索引--/home/ubuntu/work/dependence/bwa-0.7.17/bwa index -a bwtsw tmp3.fasta 
+2021-02-20 22:16:38,174 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:220] - INFO: *循环4：Step1：调用bwa对ref.fasta建立比对索引--/home/ubuntu/work/dependence/bwa-0.7.17/bwa index -a bwtsw tmp3.fasta 
+2021-02-20 22:16:38,174 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:220] - INFO: *循环4：Step1：调用bwa对ref.fasta建立比对索引--/home/ubuntu/work/dependence/bwa-0.7.17/bwa index -a bwtsw tmp3.fasta 
+2021-02-20 22:16:38,174 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:220] - INFO: *循环4：Step1：调用bwa对ref.fasta建立比对索引--/home/ubuntu/work/dependence/bwa-0.7.17/bwa index -a bwtsw tmp3.fasta 
+2021-02-20 22:16:38,176 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/filedemo1.py[line:603] - INFO: 正在分析……：*循环4：Step1：调用bwa对ref.fasta建立比对索引--/home/ubuntu/work/dependence/bwa-0.7.17/bwa index -a bwtsw tmp3.fasta 
+
+2021-02-20 22:16:40,884 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16e89030>
+2021-02-20 22:16:40,884 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16e89030>
+2021-02-20 22:16:40,884 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16e89030>
+2021-02-20 22:16:40,884 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16e89030>
+2021-02-20 22:16:40,885 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:228] - INFO: *循环4：Step2：调用bwa的比对功能bwa mem--/home/ubuntu/work/dependence/bwa-0.7.17/bwa mem tmp3.fasta /home/ubuntu/work/input/run_1.fq /home/ubuntu/work/input/run_2.fq > run.sam -t 16 
+2021-02-20 22:16:40,885 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:228] - INFO: *循环4：Step2：调用bwa的比对功能bwa mem--/home/ubuntu/work/dependence/bwa-0.7.17/bwa mem tmp3.fasta /home/ubuntu/work/input/run_1.fq /home/ubuntu/work/input/run_2.fq > run.sam -t 16 
+2021-02-20 22:16:40,885 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:228] - INFO: *循环4：Step2：调用bwa的比对功能bwa mem--/home/ubuntu/work/dependence/bwa-0.7.17/bwa mem tmp3.fasta /home/ubuntu/work/input/run_1.fq /home/ubuntu/work/input/run_2.fq > run.sam -t 16 
+2021-02-20 22:16:40,885 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:228] - INFO: *循环4：Step2：调用bwa的比对功能bwa mem--/home/ubuntu/work/dependence/bwa-0.7.17/bwa mem tmp3.fasta /home/ubuntu/work/input/run_1.fq /home/ubuntu/work/input/run_2.fq > run.sam -t 16 
+2021-02-20 22:16:41,167 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/filedemo1.py[line:603] - INFO: 正在分析……：*循环4：Step2：调用bwa的比对功能bwa mem--/home/ubuntu/work/dependence/bwa-0.7.17/bwa mem tmp3.fasta /home/ubuntu/work/input/run_1.fq /home/ubuntu/work/input/run_2.fq > run.sam -t 16 
+
+2021-02-20 22:16:41,422 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16e89030>
+2021-02-20 22:16:41,422 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16e89030>
+2021-02-20 22:16:41,422 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16e89030>
+2021-02-20 22:16:41,422 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16e89030>
+2021-02-20 22:16:41,423 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:234] - INFO: *循环4：Step3：调用samtools 的view功能，提取比对到ref.fasta的比对结果，生成bam格式的文件--samtools view -bS -F 4 run.sam > run.mapped.bam -@ 14 
+2021-02-20 22:16:41,423 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:234] - INFO: *循环4：Step3：调用samtools 的view功能，提取比对到ref.fasta的比对结果，生成bam格式的文件--samtools view -bS -F 4 run.sam > run.mapped.bam -@ 14 
+2021-02-20 22:16:41,423 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:234] - INFO: *循环4：Step3：调用samtools 的view功能，提取比对到ref.fasta的比对结果，生成bam格式的文件--samtools view -bS -F 4 run.sam > run.mapped.bam -@ 14 
+2021-02-20 22:16:41,423 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:234] - INFO: *循环4：Step3：调用samtools 的view功能，提取比对到ref.fasta的比对结果，生成bam格式的文件--samtools view -bS -F 4 run.sam > run.mapped.bam -@ 14 
+2021-02-20 22:16:41,453 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/filedemo1.py[line:603] - INFO: 正在分析……：*循环4：Step3：调用samtools 的view功能，提取比对到ref.fasta的比对结果，生成bam格式的文件--samtools view -bS -F 4 run.sam > run.mapped.bam -@ 14 
+
+2021-02-20 22:16:41,920 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16e89030>
+2021-02-20 22:16:41,920 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16e89030>
+2021-02-20 22:16:41,920 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16e89030>
+2021-02-20 22:16:41,920 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16e89030>
+2021-02-20 22:16:41,921 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:240] - INFO: *循环4：Step4：调用samtools的sort功能，对bam格式的比对结果进行重排序--samtools sort -o run.mapped.sorted.bam run.mapped.bam -@ 1 
+2021-02-20 22:16:41,921 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:240] - INFO: *循环4：Step4：调用samtools的sort功能，对bam格式的比对结果进行重排序--samtools sort -o run.mapped.sorted.bam run.mapped.bam -@ 1 
+2021-02-20 22:16:41,921 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:240] - INFO: *循环4：Step4：调用samtools的sort功能，对bam格式的比对结果进行重排序--samtools sort -o run.mapped.sorted.bam run.mapped.bam -@ 1 
+2021-02-20 22:16:41,921 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:240] - INFO: *循环4：Step4：调用samtools的sort功能，对bam格式的比对结果进行重排序--samtools sort -o run.mapped.sorted.bam run.mapped.bam -@ 1 
+2021-02-20 22:16:42,060 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16e89030>
+2021-02-20 22:16:42,060 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16e89030>
+2021-02-20 22:16:42,060 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16e89030>
+2021-02-20 22:16:42,060 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16e89030>
+2021-02-20 22:16:42,061 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:246] - INFO: *循环4：Step5：调用samtools的index功能，对重排序的比对结果建立索引--samtools index run.mapped.sorted.bam run.mapped.sorted.bam.bai 
+2021-02-20 22:16:42,061 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:246] - INFO: *循环4：Step5：调用samtools的index功能，对重排序的比对结果建立索引--samtools index run.mapped.sorted.bam run.mapped.sorted.bam.bai 
+2021-02-20 22:16:42,061 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:246] - INFO: *循环4：Step5：调用samtools的index功能，对重排序的比对结果建立索引--samtools index run.mapped.sorted.bam run.mapped.sorted.bam.bai 
+2021-02-20 22:16:42,061 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:246] - INFO: *循环4：Step5：调用samtools的index功能，对重排序的比对结果建立索引--samtools index run.mapped.sorted.bam run.mapped.sorted.bam.bai 
+2021-02-20 22:16:42,715 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16e89030>
+2021-02-20 22:16:42,715 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16e89030>
+2021-02-20 22:16:42,715 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16e89030>
+2021-02-20 22:16:42,715 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:164] - INFO: <closed file '<fdopen>', mode 'rb' at 0x7f9b16e89030>
+2021-02-20 22:16:42,716 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:253] - INFO: *循环4：Step6：调用bedtools的bamtofastq功能，将重排序的比对结果转化为fastq格式的序列--/home/ubuntu/work/dependence/bedtools bamtofastq -i run.mapped.sorted.bam -fq run.mapped.fastq 
+2021-02-20 22:16:42,716 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:253] - INFO: *循环4：Step6：调用bedtools的bamtofastq功能，将重排序的比对结果转化为fastq格式的序列--/home/ubuntu/work/dependence/bedtools bamtofastq -i run.mapped.sorted.bam -fq run.mapped.fastq 
+2021-02-20 22:16:42,716 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:253] - INFO: *循环4：Step6：调用bedtools的bamtofastq功能，将重排序的比对结果转化为fastq格式的序列--/home/ubuntu/work/dependence/bedtools bamtofastq -i run.mapped.sorted.bam -fq run.mapped.fastq 
+2021-02-20 22:16:42,716 - /home/ubuntu/software/pycharm-2020.3/project/wxpython/analysisFile/assemble.py[line:253] - INFO: *循环4：Step6：调用bedtools的bamtofastq功能，将重排序的比对结果转化为fastq格式的序列--/home/ubuntu/work/dependence/bedtools bamtofastq -i run.mapped.sorted.bam -fq run.mapped.fastq 

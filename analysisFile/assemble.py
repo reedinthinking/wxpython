@@ -64,6 +64,17 @@ class Assemble(object):
             dict[item[0]] = item[1]
         return dict
 
+    def avg(self,data,LEN):
+        datasum = cnt = 0.0
+        for num in data:
+            datasum += int(num)
+            cnt += 1
+            if cnt == LEN:
+                yield datasum / LEN
+                datasum = cnt = 0.0
+        if cnt:
+            yield datasum / cnt
+
     def drawPicture(self,datafile, savefile):
         logstr = "start to draw the picture--the data file：%s;the output picture file:%s" % (datafile,savefile)
         self.log.logger.info(logstr)
@@ -82,43 +93,50 @@ class Assemble(object):
                 msg = msg.strip('\n')
                 #print msg
                 list_1 = msg.split('\t')
-                if i<=101:
-                    if len(list_1) == 3:
-                        x.append(list_1[1])
-                        y.append(list_1[2])
+                if len(list_1) == 3:
+                    x.append(list_1[1])
+                    y.append(list_1[2])
         else:
             logstr = "the data file：%s is not found" % (datafile)
             self.log.logger.info(logstr)
             print logstr
-        plt.plot(x, y, linewidth=2)
-
-        plt.xlabel('pos', fontsize=9)
-        plt.ylabel('y', fontsize=9)
-
-        # x_major_locator = MultipleLocator(50)
-        # # 把x轴的刻度间隔设置为1，并存在变量里
-        # y_major_locator = MultipleLocator(100)
-        # # 把y轴的刻度间隔设置为10，并存在变量里
-        # ax = plt.gca()
-        # # ax为两条坐标轴的实例
-        # ax.xaxis.set_major_locator(x_major_locator)
-        # # 把x轴的主刻度设置为1的倍数
-        # ax.yaxis.set_major_locator(y_major_locator)
+        LEN = 100
+        x = list(self.avg(x,LEN))
+        y = list(self.avg(y,LEN))
+        # plt.plot(x, y, linewidth=2)
         #
-        # plt.xlim(-1, 200)
-        # # 把x轴的刻度范围设置为-0.5到11，因为0.5不满一个刻度间隔，所以数字不会显示出来，但是能看到一点空白
-        # plt.ylim(-1, 500)
-        # # 把y轴的刻度范围设置为-5到110，同理，-5不会标出来，但是能看到一点空白
+        # plt.xlabel('pos', fontsize=9)
+        # plt.ylabel('y', fontsize=9)
+        #
+        # # x_major_locator = MultipleLocator(50)
+        # # # 把x轴的刻度间隔设置为1，并存在变量里
+        # # y_major_locator = MultipleLocator(100)
+        # # # 把y轴的刻度间隔设置为10，并存在变量里
+        # # ax = plt.gca()
+        # # # ax为两条坐标轴的实例
+        # # ax.xaxis.set_major_locator(x_major_locator)
+        # # # 把x轴的主刻度设置为1的倍数
+        # # ax.yaxis.set_major_locator(y_major_locator)
+        # #
+        # # plt.xlim(-1, 200)
+        # # # 把x轴的刻度范围设置为-0.5到11，因为0.5不满一个刻度间隔，所以数字不会显示出来，但是能看到一点空白
+        # # plt.ylim(-1, 500)
+        # # # 把y轴的刻度范围设置为-5到110，同理，-5不会标出来，但是能看到一点空白
+        #
+        # # 设置x范围
+        # plt.xlim((-1, 200))
+        # # 设置 x 刻度
+        # x_ticks = np.arange(-1, 200, 50)
+        # plt.xticks(x_ticks)
+        # plt.ylim((-1, 500))
+        # y_ticks = np.arange(-1, 500, 100)
+        # plt.yticks(y_ticks)
 
-        # 设置x范围
-        plt.xlim((-1, 200))
-        # 设置 x 刻度
-        x_ticks = np.arange(-1, 200, 50)
-        plt.xticks(x_ticks)
-        plt.ylim((-1, 500))
-        y_ticks = np.arange(-1, 500, 100)
-        plt.yticks(y_ticks)
-
+        plt.plot(x, y, linewidth='1', label='depth', color='black')  # , color='black'
+        plt.xlabel('position', labelpad=10, fontsize=11, horizontalalignment='right', verticalalignment='center',
+                   rotation='horizontal')
+        plt.ylabel('depth', labelpad=10, fontsize=11, horizontalalignment='right', verticalalignment='bottom',
+                   rotation='vertical')
         # 保存图片到本地
         plt.savefig(savefile)
         # 显示图片
