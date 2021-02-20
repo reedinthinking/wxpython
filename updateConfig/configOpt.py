@@ -3,9 +3,11 @@
 import os
 import sys
 #import frozenDir
-#sys.path.append("..")
+sys.path.append("..")
 import ConfigParser
 from updateConfig.CaseConfigParser import CaseConfigParser
+reload(sys)
+sys.setdefaultencoding('utf8')
 class ConfigUtil(object):
     """ 处理config配置的类 """
     def __init__(self, file='config/paramConfig.ini'):

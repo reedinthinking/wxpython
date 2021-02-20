@@ -2,9 +2,9 @@
 # encoding:utf-8
 import re
 import os
-# import sys
-# sys.path.append("..")
-
+import sys
+sys.path.append(os.getcwd())
+print sys.path
 from analysisFile.Scount import Scount
 from updateConfig.configOpt import ConfigUtil
 from log import Logger
@@ -14,8 +14,8 @@ import time
 import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.pyplot import MultipleLocator
-# reload(sys)
-# sys.setdefaultencoding('utf8')
+reload(sys)
+sys.setdefaultencoding('utf8')
 
 
 class Assemble(object):
